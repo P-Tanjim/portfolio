@@ -635,26 +635,7 @@ nav button:hover {
     transform: translateY(-300%);
   }
 }
-.h1-kinetic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.2rem, 6vw, 5rem);
-  color: #fff;
-  display: inline-block;
-  line-height: 1.03;
-}
-.h1-kinetic span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: wordIn 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
-}
-.h1-kinetic span:nth-child(1) {
-  animation-delay: 0.06s;
-}
-.h1-kinetic span:nth-child(2) {
-  animation-delay: 0.18s;
-}
+
 
 @keyframes wordIn {
   to {
