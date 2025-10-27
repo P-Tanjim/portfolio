@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TANJIM Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Urbanist:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav" role="navigation" aria-label="Main Navigation">
+      <div class="logo">
+        <svg
+          width="126.79"
+          height="30.507"
+          viewBox="0 0 126.79 30.507"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="svgGroup"
+            stroke-linecap="round"
+            fill-rule="evenodd"
+            font-size="9pt"
+            stroke="#000"
+            stroke-width="0.35mm"
+            fill="#00000000"
+            style="stroke: #000; stroke-width: 0.35mm; fill: #00000000"
+          >
+            <path
+              d="M 112.793 15.295 L 112.93 15.295 Q 113.169 14.373 113.451 13.475 Q 113.733 12.578 114.143 11.467 Q 114.502 10.476 115.015 9.186 Q 115.527 7.896 116.1 6.563 Q 116.672 5.229 117.219 4.084 Q 117.766 2.939 118.21 2.256 Q 118.757 1.418 119.398 1.008 Q 120.039 0.598 121.287 0.598 L 123.525 0.598 Q 124.414 0.598 125.021 0.863 Q 125.627 1.128 125.884 2.119 Q 126.072 2.854 126.243 4.272 Q 126.414 5.691 126.533 8.203 Q 126.653 10.715 126.721 14.655 Q 126.79 18.594 126.79 24.387 Q 126.79 24.695 126.584 24.9 Q 126.379 25.105 126.089 25.105 L 122.192 25.105 Q 121.902 25.105 121.697 24.9 Q 121.492 24.695 121.492 24.37 L 121.492 16.714 Q 121.492 13.569 121.475 11.501 Q 121.458 9.434 121.432 8.212 Q 121.406 6.99 121.355 6.323 L 121.252 6.323 Q 120.347 8.408 119.321 10.963 Q 118.296 13.518 117.322 16.227 Q 116.348 18.936 115.579 21.516 Q 115.356 22.285 115.023 22.584 Q 114.69 22.883 113.511 22.883 L 111.545 22.883 Q 110.537 22.883 110.204 22.627 Q 109.871 22.371 109.631 21.516 Q 109.067 19.568 108.384 17.397 Q 107.7 15.227 106.974 13.134 Q 106.248 11.04 105.573 9.271 Q 104.897 7.502 104.368 6.323 L 104.265 6.323 Q 104.128 8.34 104.026 11.228 Q 103.923 14.116 103.864 17.5 Q 103.804 20.884 103.787 24.404 Q 103.787 24.712 103.582 24.908 Q 103.376 25.105 103.086 25.105 L 99.583 25.105 Q 99.292 25.105 99.087 24.9 Q 98.882 24.695 98.882 24.37 Q 98.899 15.261 99.249 9.827 Q 99.6 4.392 100.01 2.546 Q 100.283 1.333 100.975 0.966 Q 101.667 0.598 102.556 0.598 L 105.325 0.598 Q 106.265 0.598 106.7 0.931 Q 107.136 1.265 107.769 2.222 Q 108.145 2.786 108.666 3.914 Q 109.187 5.042 109.751 6.417 Q 110.315 7.793 110.819 9.135 Q 111.323 10.476 111.648 11.467 Q 111.99 12.476 112.28 13.424 Q 112.571 14.373 112.793 15.295 Z M 53.577 7.4 L 53.577 24.199 Q 53.577 24.712 53.38 24.908 Q 53.184 25.105 52.688 25.105 L 49.253 25.105 Q 48.774 25.105 48.569 24.908 Q 48.364 24.712 48.364 24.199 L 48.364 2.546 Q 48.364 1.538 48.757 1.068 Q 49.15 0.598 50.142 0.598 L 51.731 0.598 Q 52.603 0.598 53.38 0.829 Q 54.158 1.06 55.038 1.863 Q 55.918 2.666 57.089 4.349 Q 58.259 6.033 59.917 8.938 Q 61.506 11.707 62.472 13.364 Q 63.438 15.022 63.967 15.894 Q 64.497 16.765 64.762 17.141 Q 65.027 17.517 65.198 17.756 L 65.198 3.333 Q 65.198 2.837 65.352 2.581 Q 66.086 1.453 67.385 0.205 Q 67.642 0 67.813 0 Q 68 0 68.223 0.205 Q 68.923 0.854 69.41 1.444 Q 69.897 2.034 70.256 2.581 Q 70.41 2.854 70.41 3.333 L 70.41 23.687 Q 70.41 24.456 70.12 24.78 Q 69.829 25.105 69.06 25.105 L 67.419 25.105 Q 66.685 25.105 65.916 24.857 Q 65.146 24.609 64.172 23.729 Q 63.198 22.849 61.865 20.986 Q 60.532 19.124 58.652 15.894 Q 57.063 13.142 56.115 11.519 Q 55.166 9.895 54.67 9.066 Q 54.175 8.237 53.953 7.904 Q 53.73 7.571 53.577 7.4 Z M 43.528 25.105 L 39.392 25.105 Q 38.589 25.105 38.555 24.302 Q 38.486 22.388 37.939 19.653 L 28.608 19.653 Q 28.13 22.319 28.062 24.302 Q 28.027 25.105 27.19 25.105 L 23.14 25.105 Q 22.832 25.105 22.627 24.926 Q 22.422 24.746 22.439 24.302 Q 22.524 22.405 22.994 19.987 Q 23.464 17.568 24.216 14.971 Q 24.968 12.373 25.891 9.886 Q 26.814 7.4 27.805 5.332 Q 28.796 3.264 29.736 1.948 Q 30.232 1.248 30.787 0.923 Q 31.343 0.598 32.163 0.598 L 34.624 0.598 Q 35.461 0.598 36.025 0.923 Q 36.589 1.248 37.085 1.948 Q 38.025 3.264 39.008 5.341 Q 39.99 7.417 40.913 9.895 Q 41.836 12.373 42.579 14.962 Q 43.323 17.551 43.801 19.944 Q 44.28 22.336 44.348 24.199 Q 44.365 25.105 43.528 25.105 Z M 13.33 5.093 L 13.33 24.199 Q 13.33 24.712 13.116 24.908 Q 12.903 25.105 12.39 25.105 L 8.75 25.105 Q 8.237 25.105 8.024 24.908 Q 7.81 24.712 7.81 24.199 L 7.81 5.093 L 2.717 5.093 Q 2.307 5.093 2.102 4.956 Q 1.658 4.648 1.188 4.221 Q 0.718 3.794 0.171 3.196 Q 0 2.974 0 2.837 Q 0 2.683 0.171 2.495 Q 0.718 1.897 1.188 1.47 Q 1.658 1.042 2.102 0.735 Q 2.341 0.598 2.717 0.598 L 18.44 0.598 Q 18.85 0.598 19.055 0.735 Q 19.5 1.042 19.978 1.47 Q 20.457 1.897 20.986 2.495 Q 21.157 2.717 21.157 2.854 Q 21.157 3.008 20.986 3.196 Q 20.457 3.794 19.978 4.221 Q 19.5 4.648 19.055 4.956 Q 18.816 5.093 18.44 5.093 L 13.33 5.093 Z M 82.595 3.333 L 82.595 17.961 Q 82.595 20.764 82.023 22.764 Q 81.45 24.763 80.45 26.165 Q 79.451 27.566 78.177 28.566 Q 76.904 29.565 75.503 30.386 Q 74.922 30.71 74.58 30.164 L 72.666 27.104 Q 72.29 26.489 72.922 26.113 Q 74.033 25.464 74.973 24.498 Q 75.913 23.533 76.494 21.969 Q 77.075 20.405 77.075 17.961 L 77.075 3.333 Q 77.075 2.837 77.246 2.581 Q 78.015 1.453 79.399 0.205 Q 79.656 0 79.844 0 Q 80.049 0 80.271 0.205 Q 81.023 0.854 81.536 1.444 Q 82.048 2.034 82.424 2.581 Q 82.595 2.854 82.595 3.333 Z M 93.584 3.333 L 93.584 24.199 Q 93.584 24.712 93.37 24.908 Q 93.157 25.105 92.644 25.105 L 89.004 25.105 Q 88.491 25.105 88.278 24.908 Q 88.064 24.712 88.064 24.199 L 88.064 3.333 Q 88.064 2.837 88.235 2.581 Q 89.004 1.453 90.388 0.205 Q 90.645 0 90.833 0 Q 91.038 0 91.26 0.205 Q 92.012 0.854 92.524 1.444 Q 93.037 2.034 93.413 2.581 Q 93.584 2.854 93.584 3.333 Z M 33.325 5.999 L 33.223 5.999 Q 32.095 7.793 31.155 10.288 Q 30.215 12.783 29.531 15.415 L 36.948 15.415 Q 36.23 12.783 35.291 10.288 Q 34.351 7.793 33.325 5.999 Z"
+              vector-effect="non-scaling-stroke"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <div class="pages" id="pages" role="menubar">
+        <a href="#Home" class="nav-link is-active" role="menuitem">Home</a>
+        <a href="#about" class="nav-link" role="menuitem">About Me</a>
+        <a href="#porject" class="nav-link" role="menuitem">Projects</a>
+        <a href="#contect" class="nav-link" role="menuitem">Contect</a>
+        <span class="nav-underline" aria-hidden="true"></span>
+      </div>
+
+      <button class="nav-cta">Hire</button>
+
+      <div
+        class="burger"
+        id="burger"
+        role="button"
+        aria-expanded="false"
+        aria-controls="navPages"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- 3. MOBILE MENU OVERLAY (The full screen modal) -->
+    <div
+      class="nav-menu"
+      id="navPages"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="menu-title"
+    >
+      <div class="menu-card">
+        <!-- Header: Logo and Close Button -->
+        <div class="menu-header">
+          <!-- Close button for mobile menu -->
+          <button class="menu-close-btn" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Links list -->
+        <div class="menu-links-container" role="menu">
+          <a href="#Home" class="nav-link is-active" role="menuitem">Home</a>
+          <a href="#about" class="nav-link" role="menuitem">About Me</a>
+          <a href="#porject" class="nav-link" role="menuitem">Projects</a>
+          <a href="#contect" class="nav-link" role="menuitem">Contect</a>
+        </div>
+
+        <!-- Mission statement and Explore Button -->
+        <div class="menu-content-block">
+          <button class="cta-explore">Explore</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <section class="hero">
+      <div class="hero__glow glow--left"></div>
+      <div class="hero__glow glow--center"></div>
+      <div class="hero__glow glow--right"></div>
+
+      <div class="tech-icons">
+        <i class="fab fa-html5 html-icon"></i>
+        <i class="fab fa-css3-alt css-icon"></i>
+        <i class="fa-brands fa-node-js js-icon"></i>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="">Welcome To</h1>
+        <h1 class="h1-rotator">
+          <span class="name">Tanjim</span>
+          <span class="rotator">
+            <span class="rotator__inner">Portfolio</span>
+            <span class="rotator__inner">Project</span>
+            <span class="rotator__inner">About</span>
+            <span class="rotator__inner">Portfolio</span>
+          </span>
+        </h1>
+
+        <p>
+          I'm Tanjim a frontend developer building modern, meaningful
+          experiences
+        </p>
+        <div class="links">
+          <div class="social">
+            <a
+              class="social-link"
+              href="https://facebook.com/moksedur.rahman.tanjim"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+              <span class="social-label">Facebook</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://github.com/P-tanjim"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+              <span class="social-label">GitHub</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://youtube.com/@wbDev-23"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+              <span class="social-label">YouTube</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://linkedin.com/in/moksedur-rahman-tanjim-962387388/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+              <span class="social-label">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="button">
+          <button class="cta">Explore My Work</button>
+          <button class="cta2">Contact Me</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <h1 class="title-text down">About Me</h1>
+      <div class="about__wrap">
+        <!-- left: avatar + stats -->
+        <aside class="about__side" aria-hidden="false">
+          <div class="about__avatar-wrap down">
+            <img src="image.png" alt="Tanjim portrait" class="about__avatar" />
+          </div>
+
+          <div class="about__stats" role="list" aria-label="Key stats">
+            <div class="stat left" role="listitem">
+              <div class="stat__num count" data-target="2" data-suffix="+">
+                0
+              </div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+
+            <div class="stat down" role="listitem">
+              <div class="stat__num count" data-target="12" data-suffix="+">
+                0
+              </div>
+              <div class="stat__label">Projects</div>
+            </div>
+
+            <div class="stat right" role="listitem">
+              <div class="stat__num count" data-target="100" data-suffix="%">
+                0
+              </div>
+              <div class="stat__label">Client Satisfaction</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- right: content -->
+        <div class="about__content down">
+          <div class="about__card">
+            <p class="about__lead">
+              I'm <strong>Tanjim</strong> a frontend developer focused on clean
+              interfaces and meaningful user experiences. I build responsive,
+              performant web apps that feel fast and look polished.
+            </p>
+
+            <p class="about__text">
+              I loves turning complex ideas into simple, beautiful, and
+              functional interfaces. I work with HTML, CSS, JavaScript, Node.js,
+              and MongoDB, and I’m currently learning React and MySQL to grow as
+              a full-stack developer. I’m passionate about performance, modern
+              UI design, and creating interactive web experiences that feel
+              smooth and alive.
+            </p>
+
+            <div class="about__skills" aria-hidden="false">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">MongoDB</span>
+            </div>
+
+            <div class="about__actions">
+              <a class="btn btn--primary" href="#project">See My Projects</a>
+              <a class="btn btn--ghost" href="#contact">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+      // Get necessary elements
+      const burger = document.getElementById("burger");
+      const navMenu = document.getElementById("navPages");
+      const closeBtn = document.querySelector(".menu-close-btn");
+      const navLinks = document.querySelectorAll(
+        ".menu-links-container .nav-link"
+      );
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("toggle");
+      });
+
+      // Function to open the menu
+      function openMenu() {
+        navMenu.classList.add("open");
+        burger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      }
+
+      // Function to close the menu
+      function closeMenu() {
+        burger.classList.toggle("toggle");
+        navMenu.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = ""; // Restore background scrolling
+      }
+
+      // --- Event Listeners ---
+
+      // 1. Toggle menu on burger click
+      burger.addEventListener("click", () => {
+        if (navMenu.classList.contains("open")) {
+          burger.classList.toggle("toggle");
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // 2. Close menu on close button click
+      closeBtn.addEventListener("click", closeMenu);
+
+      // 3. Close menu when a navigation link is clicked (e.g., to scroll to a section)
+      navLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // 4. Close menu when clicking the backdrop (the dark, blurred area)
+      navMenu.addEventListener("click", function (event) {
+        if (event.target === navMenu) {
+          closeMenu();
+        }
+      });
+
+      // Cleanup for the preview environment (removes the background overflow lock if the screen is resized wide while the menu is open)
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768 && navMenu.classList.contains("open")) {
+          document.body.style.overflow = "";
+        }
+      });
+
+      // The desktop underline logic from the previous file is omitted here
+      // as it is not part of the mobile navigation requirement.
+    </script>
+
+    <script>
+      (function () {
+        // easing for nice smooth finish
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+
+        // Animate a single element from 0 -> target
+        function animateCount(el, target, suffix, duration) {
+          // cancel any running animation on this element
+          if (el._raf) cancelAnimationFrame(el._raf);
+          if (el._timeout) {
+            clearTimeout(el._timeout);
+            el._timeout = null;
+          }
+
+          const startTimeHolder = { start: null };
+
+          function step(now) {
+            if (!startTimeHolder.start) startTimeHolder.start = now;
+            const elapsed = now - startTimeHolder.start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutCubic(progress);
+            const current = Math.round(eased * target);
+            el.textContent = current + suffix;
+            if (progress < 1) {
+              el._raf = requestAnimationFrame(step);
+            } else {
+              el.textContent = target + suffix; // ensure exact final value
+              el._raf = null;
+            }
+          }
+
+          // start animation
+          el._raf = requestAnimationFrame(step);
+        }
+
+        // Reset element to zero display and clear animation
+        function resetCount(el, suffix) {
+          if (el._raf) {
+            cancelAnimationFrame(el._raf);
+            el._raf = null;
+          }
+          if (el._timeout) {
+            clearTimeout(el._timeout);
+            el._timeout = null;
+          }
+          el.textContent = 0 + (suffix || "");
+          el.classList.remove("visible");
+        }
+
+        // Safely read numeric target and suffix (supports typo `data-targer`)
+        function readAttrs(el) {
+          const raw =
+            el.getAttribute("data-target") ||
+            el.getAttribute("data-targer") ||
+            el.dataset.target ||
+            el.dataset.targer;
+          const target = Number(raw);
+          const safeTarget = Number.isFinite(target)
+            ? Math.max(0, Math.round(target))
+            : 0;
+          const suffix =
+            el.getAttribute("data-suffix") || el.dataset.suffix || "";
+          return { safeTarget, suffix };
+        }
+
+        // All counters
+        const counters = Array.from(document.querySelectorAll(".count"));
+        if (!counters.length) return;
+
+        // Intersection observer: triggers when ~20% visible (adjust threshold to taste)
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const el = entry.target;
+              const { safeTarget, suffix } = readAttrs(el);
+
+              if (entry.isIntersecting) {
+                // if already animating, do nothing (or restart — below we restart)
+                // optional stagger: small delay based on index
+                const index = counters.indexOf(el);
+                const stagger = Math.min(300, index * 120); // ms, cap at 300
+                // duration can scale a bit with size but keep reasonable limits
+                const duration = 900 + Math.min(1400, safeTarget * 12);
+
+                // add visible class for CSS reveal
+                el.classList.add("visible");
+
+                // start after stagger (store timeout so we can cancel on exit)
+                el._timeout = setTimeout(() => {
+                  // ensure previous rAF cleared
+                  if (el._raf) cancelAnimationFrame(el._raf);
+                  animateCount(el, safeTarget, suffix, duration);
+                  el._timeout = null;
+                }, stagger);
+              } else {
+                // left viewport: reset to zero so it will animate again next time
+                resetCount(el, suffix);
+              }
+            });
+          },
+          {
+            root: null,
+            threshold: 0.2,
+            rootMargin: "0px 0px -5% 0px",
+          }
+        );
+
+        // initialize text to 0+suffix (so before visibility it shows 0)
+        counters.forEach((c) => {
+          const { safeTarget, suffix } = readAttrs(c);
+          c.textContent = 0 + (suffix || "");
+          c.dataset._initial = "0";
+          observer.observe(c);
+        });
+
+        // cleanup on page unload (defensive)
+        window.addEventListener("pagehide", () => {
+          counters.forEach((c) => {
+            if (c._raf) cancelAnimationFrame(c._raf);
+            if (c._timeout) clearTimeout(c._timeout);
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      const aboutTitle = document.querySelector(".title-text");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            aboutTitle.classList.add("visible");
+          } else {
+            aboutTitle.classList.remove("visible");
+          }
+        });
+      });
+
+      observer.observe(aboutTitle);
+    </script>
+
+    <script>
+      (function () {
+        // choose the correct selector (your HTML uses .about__text)
+        const aboutText = document.querySelector(".about__text");
+        if (!aboutText) return; // safe-guard, prevents the "null" error
+
+        // If already split previously, skip splitting again
+        if (!aboutText.dataset.splitWords) {
+          // split on whitespace (keeps punctuation attached to words)
+          const words = aboutText.textContent.trim().split(/\s+/);
+          // rebuild with spans; preserve a single space between words
+          aboutText.innerHTML = words
+            .map((w) => `<span class="word">${w}</span>`)
+            .join(" ");
+          aboutText.dataset.splitWords = "true";
+        }
+
+        const words = Array.from(aboutText.querySelectorAll(".word"));
+        if (!words.length) return;
+
+        // Intersection Observer to trigger animation when visible
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // animate words one by one with small stagger
+                words.forEach((w, i) => {
+                  // cancel any inline style from previous runs
+                  w.style.transitionDelay = "";
+                  // stagger: 40ms per word (tweak to taste)
+                  const delay = i * 0.04;
+                  w.style.transitionDelay = `${delay}s`;
+                  // add class to start transition
+                  w.classList.add("in");
+                });
+              } else {
+                // remove class so it can replay when re-entering
+                words.forEach((w) => {
+                  w.classList.remove("in");
+                  w.style.transitionDelay = "";
+                });
+              }
+            });
+          },
+          {
+            threshold: 0.12, // start when ~12% visible
+            rootMargin: "0px 0px -5% 0px",
+          }
+        );
+
+        obs.observe(aboutText);
+
+        // cleanup on pagehide/unload
+        window.addEventListener("pagehide", () => {
+          obs.disconnect();
+        });
+      })();
+    </script>
+  </body>
+</html>
