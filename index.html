@@ -481,159 +481,57 @@
     <script src="project.js" defer></script>
     <script src="contact.js" defer></script>
 
-    <!-- <script>
-      (function () {
-        // --- 1. ELEMENT SELECTION & CONFIGURATION ---
+    <script>
+      const countUp = (el) => {
+    const target = parseInt(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 2000;
+    let startTimestamp = null;
 
-        // Select the main nav wrapper and the links container
-        const navWrapper = document.querySelector("nav");
-        const pages = navWrapper ? navWrapper.querySelector(".pages") : null;
-        const underline = pages ? pages.querySelector(".nav-underline") : null;
+    el.textContent = '0' + suffix;
 
-        // All visible navigation links that scroll the page
-        const navLinks = Array.from(
-          pages ? pages.querySelectorAll(".nav-link") : []
-        );
-        // All sections on the page that have an ID
-        const sections = document.querySelectorAll("section[id]");
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
 
-        // Calculate NAV_OFFSET dynamically (fixes the '10vh' issue)
-        const NAV_OFFSET = navWrapper ? navWrapper.offsetHeight : 80;
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(progress * target);
 
-        if (!pages || !underline || navLinks.length === 0) {
-          console.warn(
-            "Underline/Scroll script exited: Critical elements not found."
-          );
-          return;
+        el.textContent = currentValue + suffix;
+
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
         }
+    };
 
-        // --- 2. UNDERLINE POSITIONING HELPER (Moves the underline) ---
+    window.requestAnimationFrame(step);
+};
 
-        function positionUnderline(targetEl, instant = false) {
-          if (!targetEl) {
-            underline.classList.add("hidden");
-            return;
-          }
-          underline.classList.remove("hidden");
+const counters = document.querySelectorAll('.count');
 
-          const targetRect = targetEl.getBoundingClientRect();
-          const containerRect = pages.getBoundingClientRect();
-
-          const left = targetRect.left - containerRect.left;
-          const width = targetRect.width;
-
-          // Ensure transition is managed for smooth animation
-          if (instant) {
-            underline.style.transition = "none";
-          } else {
-            // Re-enable smooth transition for scroll/hover
-            underline.style.transition = "transform 0.3s ease, width 0.3s ease";
-          }
-
-          underline.style.width = `${width}px`;
-          underline.style.transform = `translateX(${left}px)`;
-
-          if (instant) {
-            // A short timeout/raf ensures the transition property is re-enabled
-            requestAnimationFrame(() => {
-              underline.style.transition =
-                "transform 0.3s ease, width 0.3s ease";
-            });
-          }
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        const el = entry.target;
+        const suffix = el.getAttribute('data-suffix') || '';
+        
+        if (entry.isIntersecting) {
+            countUp(el);
+        } else {
+            el.textContent = '0' + suffix;
         }
+    });
+};
 
-        // --- 3. ACTIVE LINK ON SCROLL LOGIC (Your fixed scroll script) ---
+const observer = new IntersectionObserver(observerCallback, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0 
+});
 
-        function updateActiveOnScroll() {
-          let currentScroll = window.scrollY;
-          let foundActiveLink = null;
+counters.forEach(counter => {
+    observer.observe(counter);
+});
 
-          // Use a reverse loop to check sections from bottom up, which is often more accurate
-          // for determining the *current* section in the viewport.
-          for (let i = sections.length - 1; i >= 0; i--) {
-            const sec = sections[i];
-
-            // Section is considered "active" when its top edge is just under the fixed nav
-            let topOfSection = sec.offsetTop - NAV_OFFSET - 5; // -5px buffer
-
-            if (currentScroll >= topOfSection) {
-              // Find the corresponding navigation link
-              const id = sec.getAttribute("id");
-              foundActiveLink = document.querySelector(
-                `.pages a[href="#${id}"]`
-              );
-              break; // Found the active section, exit loop
-            }
-          }
-
-          if (foundActiveLink) {
-            // Only update if the active link has actually changed
-            if (!foundActiveLink.classList.contains("is-active")) {
-              // 1. Update the 'is-active' class on the links
-              navLinks.forEach((link) => {
-                link.classList.remove("is-active");
-              });
-              foundActiveLink.classList.add("is-active");
-
-              // 2. 🌟 Animate the underline to the new active link
-              positionUnderline(foundActiveLink);
-            }
-          } else if (currentScroll === 0 && navLinks.length > 0) {
-            // Handle page at the very top (Home section)
-            const firstLink = navLinks[0];
-            if (!firstLink.classList.contains("is-active")) {
-              navLinks.forEach((link) => link.classList.remove("is-active"));
-              firstLink.classList.add("is-active");
-              positionUnderline(firstLink);
-            }
-          }
-        }
-
-        // Attach the scroll listener
-        window.addEventListener("scroll", updateActiveOnScroll, {
-          passive: true,
-        });
-
-        // --- 4. INITIALIZATION & OTHER HANDLERS ---
-
-        // Initial setup: run once on load and position the underline instantly
-        window.addEventListener("load", () => {
-          updateActiveOnScroll();
-          // Instant position on load to prevent flicker
-          const activeLink =
-            document.querySelector(".pages a.is-active") || navLinks[0];
-          if (activeLink) {
-            positionUnderline(activeLink, true);
-          }
-        });
-
-        // Run immediately
-        updateActiveOnScroll();
-
-        // Handle link clicks (Smooth scroll logic should be added here, currently just manages active state)
-        navLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            // e.preventDefault(); // Uncomment this line if your smooth scroll logic is missing/in external file
-
-            navLinks.forEach((l) => l.classList.remove("is-active"));
-            link.classList.add("is-active");
-            positionUnderline(link);
-
-            // Your smooth scroll logic should go here, using the NAV_OFFSET.
-          });
-
-          // Underline follows mouse hover
-          link.addEventListener("mouseenter", () => positionUnderline(link));
-        });
-
-        // Re-position underline back to the scroll-active link when the mouse leaves
-        pages.addEventListener("mouseleave", () => {
-          let activeLink = document.querySelector(".pages a.is-active");
-          if (activeLink) {
-            positionUnderline(activeLink);
-          }
-        });
-      })();
-    </script> -->
+    </script>
   </body>
 </html>
