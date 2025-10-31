@@ -49,8 +49,8 @@
       <div class="pages" id="pages" role="menubar">
         <a href="#Home" class="nav-link is-active" role="menuitem">Home</a>
         <a href="#about" class="nav-link" role="menuitem">About Me</a>
-        <a href="#porject" class="nav-link" role="menuitem">Projects</a>
-        <a href="#contect" class="nav-link" role="menuitem">Contect</a>
+        <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+        <a href="#contact" class="nav-link" role="menuitem">Contact</a>
         <span class="nav-underline" aria-hidden="true"></span>
       </div>
 
@@ -88,10 +88,10 @@
 
         <!-- Links list -->
         <div class="menu-links-container" role="menu">
-          <a href="#Home" class="nav-link is-active" role="menuitem">Home</a>
+          <a href="#Home" class="nav-link" role="menuitem">Home</a>
           <a href="#about" class="nav-link" role="menuitem">About Me</a>
-          <a href="#porject" class="nav-link" role="menuitem">Projects</a>
-          <a href="#contect" class="nav-link" role="menuitem">Contect</a>
+          <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+          <a href="#contact" class="nav-link" role="menuitem">Contact</a>
         </div>
 
         <!-- Mission statement and Explore Button -->
@@ -102,7 +102,7 @@
     </div>
 
     <!-- content -->
-    <section class="hero">
+    <section id="Home" class="hero">
       <div class="hero__glow glow--left"></div>
       <div class="hero__glow glow--center"></div>
       <div class="hero__glow glow--right"></div>
@@ -190,7 +190,7 @@
         <!-- left: avatar + stats -->
         <aside class="about__side" aria-hidden="false">
           <div class="about__avatar-wrap down">
-            <img src="image.png" alt="Tanjim portrait" class="about__avatar" />
+            <img src="profile.webp" alt="Tanjim portrait" class="about__avatar" />
           </div>
 
           <div class="about__stats" role="list" aria-label="Key stats">
@@ -252,274 +252,388 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <section id="projects" class="projects" aria-label="3D projects carousel">
+      <div class="title">Projects</div>
 
-    <script>
-      // Get necessary elements
-      const burger = document.getElementById("burger");
-      const navMenu = document.getElementById("navPages");
-      const closeBtn = document.querySelector(".menu-close-btn");
-      const navLinks = document.querySelectorAll(
-        ".menu-links-container .nav-link"
-      );
+      <div class="slider" style="--quantity: 6">
+        <div class="card iteam" id="card" style="--position: 1">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project1.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("toggle");
-      });
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
 
-      // Function to open the menu
-      function openMenu() {
-        navMenu.classList.add("open");
-        burger.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-      }
+        <div class="card iteam" id="card" style="--position: 2">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project2.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-      // Function to close the menu
-      function closeMenu() {
-        burger.classList.toggle("toggle");
-        navMenu.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = ""; // Restore background scrolling
-      }
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
 
-      // --- Event Listeners ---
+        <div class="card iteam" id="card" style="--position: 3">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project3.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-      // 1. Toggle menu on burger click
-      burger.addEventListener("click", () => {
-        if (navMenu.classList.contains("open")) {
-          burger.classList.toggle("toggle");
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
 
-      // 2. Close menu on close button click
-      closeBtn.addEventListener("click", closeMenu);
+        <div class="card iteam" id="card" style="--position: 4">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project4.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-      // 3. Close menu when a navigation link is clicked (e.g., to scroll to a section)
-      navLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
 
-      // 4. Close menu when clicking the backdrop (the dark, blurred area)
-      navMenu.addEventListener("click", function (event) {
-        if (event.target === navMenu) {
-          closeMenu();
-        }
-      });
+        <div class="card iteam" id="card" style="--position: 5">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project5.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-      // Cleanup for the preview environment (removes the background overflow lock if the screen is resized wide while the menu is open)
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 768 && navMenu.classList.contains("open")) {
-          document.body.style.overflow = "";
-        }
-      });
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
 
-      // The desktop underline logic from the previous file is omitted here
-      // as it is not part of the mobile navigation requirement.
-    </script>
+        <div class="card iteam" id="card" style="--position: 6">
+          <div class="wrap" role="group" aria-hidden="false">
+            <div class="face front">
+              <div>
+                <small class="concept-tag">CONCEPT: Networking</small>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="project-image">
+                <img src="project6.webp" alt="Project Image" />
+              </div>
+              <p>Where digital existence touches the physical wire.</p>
+            </div>
 
-    <script>
+            <div class="face back" aria-hidden="true">
+              <div>
+                <h2>The Byte Stream Theory</h2>
+              </div>
+              <div class="back-desc-container">
+                <p class="back-desc">
+                  Unravel OSI model, TCP/IP handshake and HTTP/3 details. Lorem
+                  ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
+                  libero voluptatibus, obcaecati culpa totam provident
+                  voluptate, quidem earum officia reiciendis facere quisquam
+                  perferendis. Minus, saepe consectetur! Aspernatur quae vel
+                  esse!
+                </p>
+              </div>
+              <a href="#" id="link">Open →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-container">
+      <div class="contact-left">
+        <h1>Contact Me</h1>
+        <p>Connect globally with just a message.</p>
+        <form onsubmit="event.preventDefault();">
+          <div class="input-group">
+            <input type="text" required placeholder=" " />
+            <label>Name</label>
+          </div>
+          <div class="input-group">
+            <input type="email" required placeholder=" " />
+            <label>Email</label>
+          </div>
+          <div class="input-group">
+            <textarea rows="4" required placeholder=" "></textarea>
+            <label>Message</label>
+          </div>
+          <button class="button-submit" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-right">
+        <canvas id="networkCanvas"></canvas>
+      </div>
+    </section>
+
+    <script src="nav-js.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="project.js" defer></script>
+    <script src="contact.js" defer></script>
+
+    <!-- <script>
       (function () {
-        // easing for nice smooth finish
-        function easeOutCubic(t) {
-          return 1 - Math.pow(1 - t, 3);
+        // --- 1. ELEMENT SELECTION & CONFIGURATION ---
+
+        // Select the main nav wrapper and the links container
+        const navWrapper = document.querySelector("nav");
+        const pages = navWrapper ? navWrapper.querySelector(".pages") : null;
+        const underline = pages ? pages.querySelector(".nav-underline") : null;
+
+        // All visible navigation links that scroll the page
+        const navLinks = Array.from(
+          pages ? pages.querySelectorAll(".nav-link") : []
+        );
+        // All sections on the page that have an ID
+        const sections = document.querySelectorAll("section[id]");
+
+        // Calculate NAV_OFFSET dynamically (fixes the '10vh' issue)
+        const NAV_OFFSET = navWrapper ? navWrapper.offsetHeight : 80;
+
+        if (!pages || !underline || navLinks.length === 0) {
+          console.warn(
+            "Underline/Scroll script exited: Critical elements not found."
+          );
+          return;
         }
 
-        // Animate a single element from 0 -> target
-        function animateCount(el, target, suffix, duration) {
-          // cancel any running animation on this element
-          if (el._raf) cancelAnimationFrame(el._raf);
-          if (el._timeout) {
-            clearTimeout(el._timeout);
-            el._timeout = null;
+        // --- 2. UNDERLINE POSITIONING HELPER (Moves the underline) ---
+
+        function positionUnderline(targetEl, instant = false) {
+          if (!targetEl) {
+            underline.classList.add("hidden");
+            return;
+          }
+          underline.classList.remove("hidden");
+
+          const targetRect = targetEl.getBoundingClientRect();
+          const containerRect = pages.getBoundingClientRect();
+
+          const left = targetRect.left - containerRect.left;
+          const width = targetRect.width;
+
+          // Ensure transition is managed for smooth animation
+          if (instant) {
+            underline.style.transition = "none";
+          } else {
+            // Re-enable smooth transition for scroll/hover
+            underline.style.transition = "transform 0.3s ease, width 0.3s ease";
           }
 
-          const startTimeHolder = { start: null };
+          underline.style.width = `${width}px`;
+          underline.style.transform = `translateX(${left}px)`;
 
-          function step(now) {
-            if (!startTimeHolder.start) startTimeHolder.start = now;
-            const elapsed = now - startTimeHolder.start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = easeOutCubic(progress);
-            const current = Math.round(eased * target);
-            el.textContent = current + suffix;
-            if (progress < 1) {
-              el._raf = requestAnimationFrame(step);
-            } else {
-              el.textContent = target + suffix; // ensure exact final value
-              el._raf = null;
+          if (instant) {
+            // A short timeout/raf ensures the transition property is re-enabled
+            requestAnimationFrame(() => {
+              underline.style.transition =
+                "transform 0.3s ease, width 0.3s ease";
+            });
+          }
+        }
+
+        // --- 3. ACTIVE LINK ON SCROLL LOGIC (Your fixed scroll script) ---
+
+        function updateActiveOnScroll() {
+          let currentScroll = window.scrollY;
+          let foundActiveLink = null;
+
+          // Use a reverse loop to check sections from bottom up, which is often more accurate
+          // for determining the *current* section in the viewport.
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const sec = sections[i];
+
+            // Section is considered "active" when its top edge is just under the fixed nav
+            let topOfSection = sec.offsetTop - NAV_OFFSET - 5; // -5px buffer
+
+            if (currentScroll >= topOfSection) {
+              // Find the corresponding navigation link
+              const id = sec.getAttribute("id");
+              foundActiveLink = document.querySelector(
+                `.pages a[href="#${id}"]`
+              );
+              break; // Found the active section, exit loop
             }
           }
 
-          // start animation
-          el._raf = requestAnimationFrame(step);
+          if (foundActiveLink) {
+            // Only update if the active link has actually changed
+            if (!foundActiveLink.classList.contains("is-active")) {
+              // 1. Update the 'is-active' class on the links
+              navLinks.forEach((link) => {
+                link.classList.remove("is-active");
+              });
+              foundActiveLink.classList.add("is-active");
+
+              // 2. 🌟 Animate the underline to the new active link
+              positionUnderline(foundActiveLink);
+            }
+          } else if (currentScroll === 0 && navLinks.length > 0) {
+            // Handle page at the very top (Home section)
+            const firstLink = navLinks[0];
+            if (!firstLink.classList.contains("is-active")) {
+              navLinks.forEach((link) => link.classList.remove("is-active"));
+              firstLink.classList.add("is-active");
+              positionUnderline(firstLink);
+            }
+          }
         }
 
-        // Reset element to zero display and clear animation
-        function resetCount(el, suffix) {
-          if (el._raf) {
-            cancelAnimationFrame(el._raf);
-            el._raf = null;
-          }
-          if (el._timeout) {
-            clearTimeout(el._timeout);
-            el._timeout = null;
-          }
-          el.textContent = 0 + (suffix || "");
-          el.classList.remove("visible");
-        }
-
-        // Safely read numeric target and suffix (supports typo `data-targer`)
-        function readAttrs(el) {
-          const raw =
-            el.getAttribute("data-target") ||
-            el.getAttribute("data-targer") ||
-            el.dataset.target ||
-            el.dataset.targer;
-          const target = Number(raw);
-          const safeTarget = Number.isFinite(target)
-            ? Math.max(0, Math.round(target))
-            : 0;
-          const suffix =
-            el.getAttribute("data-suffix") || el.dataset.suffix || "";
-          return { safeTarget, suffix };
-        }
-
-        // All counters
-        const counters = Array.from(document.querySelectorAll(".count"));
-        if (!counters.length) return;
-
-        // Intersection observer: triggers when ~20% visible (adjust threshold to taste)
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const el = entry.target;
-              const { safeTarget, suffix } = readAttrs(el);
-
-              if (entry.isIntersecting) {
-                // if already animating, do nothing (or restart — below we restart)
-                // optional stagger: small delay based on index
-                const index = counters.indexOf(el);
-                const stagger = Math.min(300, index * 120); // ms, cap at 300
-                // duration can scale a bit with size but keep reasonable limits
-                const duration = 900 + Math.min(1400, safeTarget * 12);
-
-                // add visible class for CSS reveal
-                el.classList.add("visible");
-
-                // start after stagger (store timeout so we can cancel on exit)
-                el._timeout = setTimeout(() => {
-                  // ensure previous rAF cleared
-                  if (el._raf) cancelAnimationFrame(el._raf);
-                  animateCount(el, safeTarget, suffix, duration);
-                  el._timeout = null;
-                }, stagger);
-              } else {
-                // left viewport: reset to zero so it will animate again next time
-                resetCount(el, suffix);
-              }
-            });
-          },
-          {
-            root: null,
-            threshold: 0.2,
-            rootMargin: "0px 0px -5% 0px",
-          }
-        );
-
-        // initialize text to 0+suffix (so before visibility it shows 0)
-        counters.forEach((c) => {
-          const { safeTarget, suffix } = readAttrs(c);
-          c.textContent = 0 + (suffix || "");
-          c.dataset._initial = "0";
-          observer.observe(c);
+        // Attach the scroll listener
+        window.addEventListener("scroll", updateActiveOnScroll, {
+          passive: true,
         });
 
-        // cleanup on page unload (defensive)
-        window.addEventListener("pagehide", () => {
-          counters.forEach((c) => {
-            if (c._raf) cancelAnimationFrame(c._raf);
-            if (c._timeout) clearTimeout(c._timeout);
+        // --- 4. INITIALIZATION & OTHER HANDLERS ---
+
+        // Initial setup: run once on load and position the underline instantly
+        window.addEventListener("load", () => {
+          updateActiveOnScroll();
+          // Instant position on load to prevent flicker
+          const activeLink =
+            document.querySelector(".pages a.is-active") || navLinks[0];
+          if (activeLink) {
+            positionUnderline(activeLink, true);
+          }
+        });
+
+        // Run immediately
+        updateActiveOnScroll();
+
+        // Handle link clicks (Smooth scroll logic should be added here, currently just manages active state)
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            // e.preventDefault(); // Uncomment this line if your smooth scroll logic is missing/in external file
+
+            navLinks.forEach((l) => l.classList.remove("is-active"));
+            link.classList.add("is-active");
+            positionUnderline(link);
+
+            // Your smooth scroll logic should go here, using the NAV_OFFSET.
           });
+
+          // Underline follows mouse hover
+          link.addEventListener("mouseenter", () => positionUnderline(link));
         });
-      })();
-    </script>
 
-    <script>
-      const aboutTitle = document.querySelector(".title-text");
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            aboutTitle.classList.add("visible");
-          } else {
-            aboutTitle.classList.remove("visible");
+        // Re-position underline back to the scroll-active link when the mouse leaves
+        pages.addEventListener("mouseleave", () => {
+          let activeLink = document.querySelector(".pages a.is-active");
+          if (activeLink) {
+            positionUnderline(activeLink);
           }
         });
-      });
-
-      observer.observe(aboutTitle);
-    </script>
-
-    <script>
-      (function () {
-        // choose the correct selector (your HTML uses .about__text)
-        const aboutText = document.querySelector(".about__text");
-        if (!aboutText) return; // safe-guard, prevents the "null" error
-
-        // If already split previously, skip splitting again
-        if (!aboutText.dataset.splitWords) {
-          // split on whitespace (keeps punctuation attached to words)
-          const words = aboutText.textContent.trim().split(/\s+/);
-          // rebuild with spans; preserve a single space between words
-          aboutText.innerHTML = words
-            .map((w) => `<span class="word">${w}</span>`)
-            .join(" ");
-          aboutText.dataset.splitWords = "true";
-        }
-
-        const words = Array.from(aboutText.querySelectorAll(".word"));
-        if (!words.length) return;
-
-        // Intersection Observer to trigger animation when visible
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // animate words one by one with small stagger
-                words.forEach((w, i) => {
-                  // cancel any inline style from previous runs
-                  w.style.transitionDelay = "";
-                  // stagger: 40ms per word (tweak to taste)
-                  const delay = i * 0.04;
-                  w.style.transitionDelay = `${delay}s`;
-                  // add class to start transition
-                  w.classList.add("in");
-                });
-              } else {
-                // remove class so it can replay when re-entering
-                words.forEach((w) => {
-                  w.classList.remove("in");
-                  w.style.transitionDelay = "";
-                });
-              }
-            });
-          },
-          {
-            threshold: 0.12, // start when ~12% visible
-            rootMargin: "0px 0px -5% 0px",
-          }
-        );
-
-        obs.observe(aboutText);
-
-        // cleanup on pagehide/unload
-        window.addEventListener("pagehide", () => {
-          obs.disconnect();
-        });
       })();
-    </script>
+    </script> -->
   </body>
 </html>
