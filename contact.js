@@ -1,4 +1,3 @@
-// Circle particle network animation
 const canvas = document.getElementById("networkCanvas");
 const ctx = canvas.getContext("2d");
 let particles = [];

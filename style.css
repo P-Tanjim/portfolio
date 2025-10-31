@@ -19,7 +19,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #5271ff #0a0f24;
 }
-*{
+* {
   scroll-behavior: smooth;
 }
 
@@ -27,7 +27,6 @@ html,
 body {
   overflow-x: hidden;
 }
-/* For Chrome */
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -62,15 +61,13 @@ nav .logo {
   width: auto;
 }
 
-/* ===== nav links ===== */
 .pages {
-  position: relative; /* container for underline positioning */
+  position: relative;
   display: flex;
   gap: 22px;
   align-items: center;
 }
 
-/* link base style */
 .nav-link {
   position: relative;
   display: inline-block;
@@ -84,14 +81,12 @@ nav .logo {
   white-space: nowrap;
 }
 
-/* hover/focus color hint */
 .nav-link:hover,
 .nav-link:focus {
   color: #dbe6ff;
   outline: none;
 }
 
-/* active link (page open) */
 .nav-link.is-active {
   color: #eaf0ff;
   font-weight: 600;
@@ -113,12 +108,10 @@ nav .logo {
   animation: scale 0.5s ease;
 }
 
-/* collapse underline when no active link — optional */
 .nav-underline.hidden {
   width: 0 !important;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .nav-underline {
     transition: none !important;
@@ -193,7 +186,6 @@ nav button:hover {
   box-shadow: 0 4px 14px rgba(82, 113, 255, 0.3);
 }
 
-/* Burger menu for mobile */
 .burger {
   display: none;
   cursor: pointer;
@@ -238,9 +230,8 @@ nav button:hover {
 :root {
   font-family: "Inter", sans-serif;
 }
-/* Burger menu for mobile */
 .burger {
-  display: none; /* Hidden on desktop */
+  display: none;
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
@@ -255,9 +246,7 @@ nav button:hover {
   transition: all 0.3s ease;
 }
 
-/* --- MOBILE MENU (MODAL OVERLAY) STYLES --- */
 .nav-menu {
-  /* Full screen overlay settings */
   position: fixed;
   top: 0;
   left: 0;
@@ -270,7 +259,6 @@ nav button:hover {
   justify-content: center;
   align-items: center;
 
-  /* Transition settings */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -281,7 +269,6 @@ nav button:hover {
   visibility: visible;
 }
 
-/* Inner menu card, centered in the overlay (matching the image) */
 .menu-card {
   width: 75%;
   max-width: 400px;
@@ -298,7 +285,6 @@ nav button:hover {
   transform: scale(1);
 }
 
-/* Close Button */
 .menu-close-btn {
   background: transparent;
   border: none;
@@ -313,7 +299,6 @@ nav button:hover {
   color: #7b00ff;
 }
 
-/* Link Styles */
 .menu-links-container .nav-link {
   width: 100%;
   padding: 20px 5px;
@@ -334,7 +319,6 @@ nav button:hover {
   border-bottom: 1px solid #1a3deb;
 }
 
-/* Content Block */
 .menu-content-block {
   text-align: center;
   padding-top: 20px;
@@ -344,7 +328,6 @@ nav button:hover {
   font-size: 0.95rem;
 }
 
-/* --- SCI-FI EXPLORE BUTTON STYLE --- */
 .cta-explore {
   --cut-size: 15px;
   display: inline-block;
@@ -359,7 +342,6 @@ nav button:hover {
   position: relative;
   margin-top: 20px;
 
-  /* Creates the angular shape */
   clip-path: polygon(
     var(--cut-size) 0%,
     100% 0,
@@ -374,9 +356,7 @@ nav button:hover {
   transform: translateY(-1px);
 }
 
-/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
-  /* On mobile, only show the burger */
   nav .pages {
     display: none !important;
   }
@@ -389,7 +369,6 @@ nav button:hover {
 }
 
 @media (min-width: 769px) {
-  /* On desktop, hide the mobile menu */
   .nav-menu {
     display: none !important;
     opacity: 0 !important;
@@ -397,16 +376,14 @@ nav button:hover {
   }
 }
 
-/* CSS */
 :root {
-  --bg-dark-1: #07070a; /* deep base */
-  --bg-dark-2: #0a0f24; /* used in subtle base gradient */
-  --glow-left: #6b21a8; /* purple */
-  --glow-center: #1a3deb; /* blue (your chosen) */
-  --glow-right: #00d6ff; /* cyan */
+  --bg-dark-1: #07070a;
+  --bg-dark-2: #0a0f24;
+  --glow-left: #6b21a8;
+  --glow-center: #1a3deb;
+  --glow-right: #00d6ff;
 }
 
-/* Basic hero */
 .hero {
   position: relative;
   height: 100dvh;
@@ -418,7 +395,6 @@ nav button:hover {
   overflow: hidden;
   font-family: "Poppins", Inter, sans-serif;
 
-  /* subtle base gradient */
   background: linear-gradient(
     180deg,
     var(--bg-dark-1) 0%,
@@ -426,20 +402,18 @@ nav button:hover {
   );
 }
 
-/* glow layers (large, blurred radial gradients) */
 .hero__glow {
   position: absolute;
-  width: 80vmax; /* very large to make the glow soft */
+  width: 80vmax;
   height: 80vmax;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(90px); /* core softening — increase for softer */
+  filter: blur(90px);
   opacity: 0.85;
-  mix-blend-mode: screen; /* try screen / overlay / normal — screen brightens */
+  mix-blend-mode: screen;
   transform: translate3d(0, 0, 0);
 }
 
-/* positions */
 .glow--left {
   left: -10%;
   top: 10%;
@@ -499,7 +473,6 @@ nav button:hover {
   animation: pulseGlow 8s ease-in-out infinite alternate;
 }
 
-/* Responsive glow adjustment */
 @media (max-width: 768px) {
   .hero__glow {
     width: 60vmax;
@@ -529,7 +502,6 @@ nav button:hover {
   }
 }
 
-/* subtle vignette overlay for depth */
 .hero::after {
   content: "";
   position: absolute;
@@ -558,7 +530,6 @@ nav button:hover {
   z-index: 0;
 }
 
-/* content */
 .hero__content {
   position: relative;
   z-index: 5;
@@ -610,30 +581,22 @@ nav button:hover {
   }
   25% {
     transform: translateY(0);
-  } /* Hold Portfolio */
-
-  /* Transition 1: Portfolio -> Project (Scroll Up) */
+  }
   33% {
     transform: translateY(-100%);
   }
 
-  /* Position 2: Project (Hold) */
   58% {
     transform: translateY(-100%);
-  } /* Hold Project */
+  }
 
-  /* Transition 2: Project -> About (Scroll Up) */
   66% {
     transform: translateY(-200%);
   }
 
-  /* Position 3: About (Hold) */
   91% {
     transform: translateY(-200%);
-  } /* Hold About */
-
-  /* Transition 3: About -> Portfolio (Scroll Down/Up Reset) */
-  /* By smoothly returning to 0% from -200%, the Portfolio word appears to scroll UP from below the viewport. */
+  }
   100% {
     transform: translateY(-300%);
   }
@@ -685,7 +648,6 @@ nav button:hover {
   }
 }
 
-/* CTA */
 .hero__content .button {
   display: flex;
   justify-content: center;
@@ -721,27 +683,24 @@ nav button:hover {
   cursor: pointer;
   z-index: 0;
   overflow: hidden;
-  border: 2px solid transparent; /* base border so layout is stable */
+  border: 2px solid transparent;
   transition: box-shadow 0.2s ease;
 }
 
-/* Animated gradient pseudo-element (the border) */
 .cta2::before {
   content: "";
   position: absolute;
-  inset: 0; /* fill the button */
-  padding: 2px; /* thickness of the visible border */
+  inset: 0;
+  padding: 2px;
   border-radius: inherit;
   background: linear-gradient(90deg, #1a3deb, #5271ff, #1a3deb);
-  background-size: 200% 100%; /* IMPORTANT: allows background-position anim */
+  background-size: 200% 100%;
   z-index: -1;
 
-  /* mask to cut out the center and leave only the border ring visible */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask-composite: exclude; /* non-webkit fallback (may vary) */
+  mask-composite: exclude;
 
-  /* start paused / static */
   transition: box-shadow 0.2s ease;
 }
 @keyframes slide {
@@ -753,18 +712,15 @@ nav button:hover {
   }
 }
 
-/* Animate the gradient only while hovering */
 .cta2::before {
   animation: borderMove 2s linear infinite;
 }
 
-/* subtle background on hover (optional) */
 .cta2:hover {
   background: rgba(255, 255, 255, 0.02);
   box-shadow: 0 8px 30px rgba(82, 113, 255, 0.3);
 }
 
-/* Keyframes */
 @keyframes borderMove {
   0% {
     background-position: 0% 50%;
@@ -777,7 +733,6 @@ nav button:hover {
   }
 }
 
-/* respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .cta2::before,
   .cta2:hover::before {
@@ -785,7 +740,6 @@ nav button:hover {
   }
 }
 
-/* Optional slow movement animation (subtle) */
 @keyframes float-slow {
   0% {
     transform: translateY(0) translateX(0) scale(1);
@@ -804,7 +758,6 @@ nav button:hover {
   animation: float-slow 20s ease-in-out infinite;
 }
 
-/* Social container */
 .social {
   display: flex;
   gap: 12px;
@@ -813,7 +766,6 @@ nav button:hover {
   margin: 1.25rem 0 1.5rem;
 }
 
-/* individual link (circle icon) */
 .social-link {
   position: relative;
   display: inline-flex;
@@ -822,7 +774,7 @@ nav button:hover {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03); /* subtle circle */
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: #ffffff;
   font-size: 18px;
@@ -831,14 +783,12 @@ nav button:hover {
   overflow: visible;
 }
 
-/* icon inside */
 .social-link i {
   display: inline-block;
   line-height: 1;
   transform: translateZ(0);
 }
 
-/* label that appears on hover */
 .social-label {
   position: absolute;
   left: 50%;
@@ -856,7 +806,6 @@ nav button:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
-/* hover: lift + brand color glow + label */
 .social-link:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(26, 61, 235, 0.12);
@@ -864,13 +813,11 @@ nav button:hover {
 .social-link {
   animation: scale 0.5s ease;
 }
-/* TURN ON brand color and subtle glow for each service */
 .social-link:hover i,
 .social-link:focus i {
   filter: none;
 }
 
-/* Brand color variants (adjust opacity to taste) */
 .social-link[href*="facebook"]:hover,
 .social-link[href*="facebook"]:focus {
   background: linear-gradient(
@@ -912,14 +859,12 @@ nav button:hover {
   color: #0077b5;
 }
 
-/* show label on hover/focus */
 .social-link:hover .social-label,
 .social-link:focus .social-label {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
-/* small screens: slightly smaller icons and spacing */
 @media (max-width: 480px) {
   .social {
     gap: 10px;
@@ -936,7 +881,6 @@ nav button:hover {
   }
 }
 
-/* accessibility: focus ring */
 .social-link:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(26, 61, 235, 0.12),
@@ -947,7 +891,7 @@ nav button:hover {
   position: absolute;
   inset: 0;
   overflow: visible;
-  z-index: 1; /* behind text but above background */
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -959,18 +903,17 @@ nav button:hover {
   transition: transform 0.3s ease;
 }
 
-/* --- Icon positions --- */
 .html-icon {
   top: 10%;
   left: 8%;
-  color: #f16529; /* HTML orange */
+  color: #f16529;
   animation: float 5s ease-in-out infinite;
 }
 
 .css-icon {
   top: 15%;
   right: 10%;
-  color: #5c8dff; /* CSS blue */
+  color: #5c8dff;
   animation: swing 6s ease-in-out infinite;
 }
 
@@ -978,13 +921,10 @@ nav button:hover {
   bottom: 15%;
   left: 80%;
   transform: translateX(-50%);
-  color: #f7df1e; /* JS yellow */
+  color: #f7df1e;
   animation: pulse 4s ease-in-out infinite;
 }
 
-/* --- Animations --- */
-
-/* Floating (up/down) */
 @keyframes float {
   0%,
   100% {
@@ -995,7 +935,6 @@ nav button:hover {
   }
 }
 
-/* Rotate gently 45° <-> -45° */
 @keyframes swing {
   0% {
     transform: rotate(45deg);
@@ -1008,7 +947,6 @@ nav button:hover {
   }
 }
 
-/* Zoom in/out */
 @keyframes pulse {
   0%,
   100% {
@@ -1019,7 +957,6 @@ nav button:hover {
   }
 }
 
-/* --- Optional: Responsive size tweaks --- */
 @media (max-width: 768px) {
   .tech-icons i {
     font-size: 50px;
@@ -1031,7 +968,6 @@ nav button:hover {
     height: 65vh;
   }
 }
-/* Mobile screen adjustment */
 @media (max-width: 768px) {
   .hero {
     height: 85dvh;
@@ -1054,22 +990,18 @@ nav button:hover {
   }
 }
 
-/* About section */
-
-/* ABOUT: Glass / Frosted style */
 :root {
   --about-bg-start: #061024;
   --about-bg-end: #0b1020;
-  --glass-bg: rgba(255, 255, 255, 0.03); /* frosted panel */
+  --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
   --text: #f4f7ff;
   --muted: rgba(244, 247, 255, 0.72);
-  --accent: #5271ff; /* purple accent (you can change to #5271FF if preferred) */
+  --accent: #5271ff;
   --card-radius: 14px;
   --container-max: 1180px;
 }
 
-/* section container */
 .about {
   background: linear-gradient(
     180deg,
@@ -1092,6 +1024,23 @@ nav button:hover {
   letter-spacing: 1px;
   position: relative;
 }
+.title-underline {
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 15px;
+}
+
+.title-underline.is-visible {
+  width: 15%;
+}
+
 .down {
   animation: down both;
   animation-timeline: view();
@@ -1131,7 +1080,6 @@ nav button:hover {
     transform: translateY(0px);
   }
 }
-/* Optional little underline animation */
 .title-text::after {
   content: "";
   position: absolute;
@@ -1149,7 +1097,6 @@ nav button:hover {
   width: 15%;
 }
 
-/* inner wrap for two-column layout */
 .about__wrap {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -1160,7 +1107,6 @@ nav button:hover {
   box-sizing: border-box;
 }
 
-/* SIDE: avatar & stats */
 .about__side {
   display: flex;
   flex-direction: column;
@@ -1168,7 +1114,6 @@ nav button:hover {
   align-items: center;
 }
 
-/* avatar wrapper */
 .about__avatar-wrap {
   width: 100%;
   display: flex;
@@ -1188,7 +1133,6 @@ nav button:hover {
   );
 }
 
-/* stats */
 .about__stats {
   display: flex;
   gap: 0.9rem;
@@ -1215,12 +1159,10 @@ nav button:hover {
   margin-top: 6px;
 }
 
-/* CONTENT column */
 .about__content {
   display: block;
 }
 
-/* card (frosted panel) */
 .about__card {
   background: var(--glass-bg);
   border-radius: var(--card-radius);
@@ -1233,7 +1175,6 @@ nav button:hover {
   box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
 }
 
-/* fallback for browsers without backdrop-filter */
 @supports not (
   (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
 ) {
@@ -1246,7 +1187,6 @@ nav button:hover {
   }
 }
 
-/* headings and text */
 .about__title {
   font-family: "Poppins", "Urbanist", sans-serif;
   font-weight: 700;
@@ -1267,14 +1207,11 @@ nav button:hover {
   margin: 1rem 0;
 }
 
-/* word-by-word zoom animation for about paragraph */
 .about__text {
-  /* your existing styles remain */
   overflow-wrap: anywhere;
 }
 
-/* each word wrapper */
-.about__text .word {
+/* .about__text .word {
   display: inline-block;
   opacity: 0;
   transform: scale(0.92);
@@ -1284,22 +1221,43 @@ nav button:hover {
   will-change: transform, opacity;
 }
 
-/* visible state when animated */
 .about__text .word.in {
   opacity: 1;
   transform: scale(1);
 }
 
-/* accessibility: stop animation if user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .about__text .word {
     transition: none;
     transform: none;
     opacity: 1;
   }
+} */
+
+
+.about__text span {
+    display: inline-block; 
+    opacity: 0;
+    transform: scale(0); 
+    transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
+                transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.about__text.is-animated span {
+    opacity: 1;
+    transform: scale(1); 
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* skill chips */
+
 .about__skills {
   margin: 1rem 0 1.2rem 0;
   display: flex;
@@ -1328,7 +1286,6 @@ nav button:hover {
   transition: all 0.2s ease;
 }
 
-/* actions */
 .about__actions {
   margin-top: 0.6rem;
   display: flex;
@@ -1364,7 +1321,6 @@ nav button:hover {
   transition: all 0.2s ease;
 }
 
-/* responsive adjustments */
 @media (max-width: 1024px) {
   .about__wrap {
     grid-template-columns: 1fr;
@@ -1404,12 +1360,9 @@ nav button:hover {
   }
 }
 
-/* small visual touches */
 .about__card a {
   font-weight: 700;
 }
-
-/* project section */
 
 .projects {
   width: 100%;
@@ -1431,9 +1384,9 @@ nav button:hover {
   justify-content: center;
   transform-style: preserve-3d;
   perspective: 1000px;
-  overflow-y: auto; /* allow vertical scroll */
-  overflow-x: hidden; /* keep horizontal clipped if needed */
-  touch-action: pan-y; /* allow vertical pan/scrolling */
+  overflow-y: auto;
+  overflow-x: hidden;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 .projects::after {
@@ -1456,7 +1409,6 @@ nav button:hover {
   mix-blend-mode: overlay;
   z-index: 0;
 }
-/* Mobile: push the conic-card wedge more to the LEFT */
 @media (max-width: 1024px) {
   .projects {
     background: conic-gradient(
@@ -1482,6 +1434,58 @@ nav button:hover {
   pointer-events: none;
 }
 
+.pause-play {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.pause-play i {
+  height: 100%;
+  width: 100%;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ce50ff 0%, #9a43e8 45%, #48169e 100%);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.up-icon,
+.down-icon {
+  font-size: 2.3rem;
+  position: absolute;
+  right: 2vw;
+  background: linear-gradient(90deg, #ce50ff 0%, #9a43e8 45%, #48169e 100%);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 999;
+}
+@media (min-width: 768px) {
+  .up-icon,
+  .down-icon {
+    display: none;
+  }
+}
+.up-icon {
+  top: 50px;
+}
+.down-icon {
+  bottom: 20px;
+}
+
 .projects .slider {
   width: 200px;
   height: 270px;
@@ -1490,7 +1494,7 @@ nav button:hover {
   --current-rotation: 0deg;
   --quantity: 6;
   --tz: 450px;
-  touch-action: pan-x; /* allow horizontal pans for the slider, block vertical default here only if you need */
+  touch-action: pan-x;
   -ms-touch-action: pan-x;
 }
 
@@ -1501,11 +1505,9 @@ nav button:hover {
   }
 }
 
-/* each card */
 .projects .slider .iteam {
   position: absolute;
   inset: 0 0 0 0;
-  /* use the tz variable so scaling can re-use the same formula */
   transform: rotateY(
       calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
     )
@@ -1514,7 +1516,6 @@ nav button:hover {
   will-change: transform;
 }
 
-/* front card when focused: override transform to include scale(1.1) */
 .projects .slider .iteam.focused-scale {
   transform: rotateY(
       calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
@@ -1536,7 +1537,6 @@ nav button:hover {
   display: block;
 }
 
-/* responsive: change translateZ via tz variable */
 @media (max-width: 1025px) {
   .projects .slider {
     --tz: 300px;
@@ -1591,10 +1591,9 @@ nav button:hover {
   flex-direction: column;
   justify-content: space-between;
 
-  /* --- FIX: Blur Text Fixes --- */
-  transform: translateZ(0); /* Hardware acceleration */
-  -webkit-font-smoothing: antialiased; /* macOS/iOS sharpness */
-  -moz-osx-font-smoothing: grayscale; /* Firefox sharpness */
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .face small {
@@ -1718,18 +1717,14 @@ button {
   }
 }
 
-/* Respect reduced motion settings (no animations present, but keep good practice) */
 @media (prefers-reduced-motion: reduce) {
   .projects::after {
     filter: blur(28px);
   }
 }
 
-/* contact css */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-/* Contact section */
 .contact-container {
   display: flex;
   flex-direction: row;

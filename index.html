@@ -47,7 +47,7 @@
       </div>
 
       <div class="pages" id="pages" role="menubar">
-        <a href="#Home" class="nav-link is-active" role="menuitem">Home</a>
+        <a href="#Home" class="nav-link" role="menuitem">Home</a>
         <a href="#about" class="nav-link" role="menuitem">About Me</a>
         <a href="#projects" class="nav-link" role="menuitem">Projects</a>
         <a href="#contact" class="nav-link" role="menuitem">Contact</a>
@@ -69,7 +69,6 @@
       </div>
     </nav>
 
-    <!-- 3. MOBILE MENU OVERLAY (The full screen modal) -->
     <div
       class="nav-menu"
       id="navPages"
@@ -78,15 +77,12 @@
       aria-labelledby="menu-title"
     >
       <div class="menu-card">
-        <!-- Header: Logo and Close Button -->
         <div class="menu-header">
-          <!-- Close button for mobile menu -->
           <button class="menu-close-btn" aria-label="Close menu">
             <i class="fas fa-times"></i>
           </button>
         </div>
 
-        <!-- Links list -->
         <div class="menu-links-container" role="menu">
           <a href="#Home" class="nav-link" role="menuitem">Home</a>
           <a href="#about" class="nav-link" role="menuitem">About Me</a>
@@ -94,7 +90,6 @@
           <a href="#contact" class="nav-link" role="menuitem">Contact</a>
         </div>
 
-        <!-- Mission statement and Explore Button -->
         <div class="menu-content-block">
           <button class="cta-explore">Explore</button>
         </div>
@@ -185,9 +180,10 @@
     </section>
 
     <section class="about" id="about" aria-labelledby="about-heading">
-      <h1 class="title-text down">About Me</h1>
+      <h1 class="title-text down">
+        About Me <span class="title-underline" id="about-underline"></span>
+      </h1>
       <div class="about__wrap">
-        <!-- left: avatar + stats -->
         <aside class="about__side" aria-hidden="false">
           <div class="about__avatar-wrap down">
             <img
@@ -257,6 +253,13 @@
     </section>
 
     <section id="projects" class="projects" aria-label="3D projects carousel">
+      <div class="pause-play">
+        <i class="fa-solid fa-circle-pause pause"></i>
+        <i class="fa-solid fa-circle-play play hidden"></i>
+      </div>
+      <div class="up-icon"><i class="fa-solid fa-chevron-up"></i></div>
+      <div class="down-icon"><i class="fa-solid fa-chevron-down"></i></div>
+
       <div class="title">Projects</div>
 
       <div class="slider" style="--quantity: 6">
@@ -271,14 +274,14 @@
                 <img src="project1.webp" alt="Apanique preview" />
               </div>
               <p>
-                Responsive e commerce demo: product grid, cart UI, and checkout
+                Responsive ecommerce demo: product grid, cart UI, and checkout
                 flows.
               </p>
             </div>
 
             <div class="face back" aria-hidden="true">
               <div>
-                <h2>Apanique  E-commerce Demo</h2>
+                <h2>Apanique E commerce Demo</h2>
               </div>
               <div class="back-desc-container">
                 <p class="back-desc">
@@ -288,7 +291,7 @@
                 </p>
               </div>
               <a
-                href="https://github.com/P-Tanjim/apanique"
+                href="https://p-tanjim.github.io/apanique"
                 id="link"
                 target="_blank"
                 rel="noopener"
@@ -349,7 +352,7 @@
 
             <div class="face back" aria-hidden="true">
               <div>
-                <h2>Fight  Play & Fun</h2>
+                <h2>Fight Play & Fun</h2>
               </div>
               <div class="back-desc-container">
                 <p class="back-desc">
@@ -359,7 +362,7 @@
                 </p>
               </div>
               <a
-                href="https://github.com/P-Tanjim/hasinaVSyunus"
+                href="https://p-tanjim.github.io/hasinaVSyunus"
                 id="link"
                 target="_blank"
                 rel="noopener"
@@ -374,7 +377,7 @@
             <div class="face front">
               <div>
                 <small class="concept-tag">CONCEPT: ASCII Art</small>
-                <h2>Text → ASCII</h2>
+                <h2>Text to ASCII</h2>
               </div>
               <div class="project-image">
                 <img src="project4.webp" alt="Text to ASCII preview" />
@@ -384,7 +387,7 @@
 
             <div class="face back" aria-hidden="true">
               <div>
-                <h2>Text → ASCII  Converter</h2>
+                <h2>Text to ASCII Converter</h2>
               </div>
               <div class="back-desc-container">
                 <p class="back-desc">
@@ -409,7 +412,7 @@
             <div class="face front">
               <div>
                 <small class="concept-tag">CONCEPT: Learning</small>
-                <h2>BioLearn  Animated Lessons</h2>
+                <h2>BioLearn Animated Lessons</h2>
               </div>
               <div class="project-image">
                 <img src="project5.webp" alt="BioLearn preview" />
@@ -421,17 +424,17 @@
 
             <div class="face back" aria-hidden="true">
               <div>
-                <h2>BioLearn  Interactive Lessons</h2>
+                <h2>BioLearn Interactive Lessons</h2>
               </div>
               <div class="back-desc-container">
                 <p class="back-desc">
-                  A web based learning platform combining animations and
-                  hands on activities to make biology concepts clear and
-                  engaging for students.
+                  A web based learning platform combining animations and hands
+                  on activities to make biology concepts clear and engaging for
+                  students.
                 </p>
               </div>
               <a
-                href="https://github.com/P-Tanjim/sanjir-sir"
+                href="https://p-tanjim.github.io/sanjir-sir"
                 id="link"
                 target="_blank"
                 rel="noopener"
@@ -463,13 +466,13 @@
               </div>
               <div class="back-desc-container">
                 <p class="back-desc">
-                  A responsive portfolio site with project demos,
-                  animations, and a contact section. Built for clarity and
-                  showcase ready visuals.
+                  A responsive portfolio site with project demos, animations,
+                  and a contact section. Built for clarity and showcase ready
+                  visuals.
                 </p>
               </div>
               <a
-                href="https://github.com/P-Tanjim/portfolio"
+                href="https://p-tanjim.github.io/portfolio"
                 id="link"
                 target="_blank"
                 rel="noopener"
@@ -512,6 +515,7 @@
     <script src="project.js" defer></script>
     <script src="contact.js" defer></script>
 
+    <!-- secondary nav  + navigate button-->
     <script>
       const navToggle = document.querySelector(".burger");
       const navMenu = document.querySelector(".nav-menu");
@@ -579,6 +583,8 @@
       const contactBtn = document.querySelector(".cta2");
       const btnAboutOne = document.querySelector(".btn--primary");
       const btnAboutTwo = document.querySelector(".btn--ghost");
+      const gotoAbout = document.querySelector(".up-icon");
+      const gotoContact = document.querySelector(".down-icon");
 
       function scrollProject() {
         const targetId = "#projects";
@@ -600,6 +606,25 @@
             behavior: "smooth",
           });
         }
+      }
+
+      if (gotoAbout) {
+        gotoAbout.addEventListener("click", () => {
+          const targetId = "#about";
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+
+      if (gotoContact) {
+        gotoContact.addEventListener("click", () => {
+          scrollContact();
+        });
       }
 
       if (contactBtn) {
@@ -627,6 +652,7 @@
       }
     </script>
 
+    <!-- little animations by js -->
     <script>
       const countUp = (el) => {
         const target = parseInt(el.getAttribute("data-target"));
@@ -677,6 +703,64 @@
       counters.forEach((counter) => {
         observer.observe(counter);
       });
+
+      const aboutSection = document.getElementById("about");
+      const titleUnderline = document.getElementById("about-underline");
+
+      const underlineObserverCallback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            titleUnderline.classList.add("is-visible");
+          } else {
+            titleUnderline.classList.remove("is-visible");
+          }
+        });
+      };
+
+      const underlineObserver = new IntersectionObserver(
+        underlineObserverCallback,
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        }
+      );
+
+      if (aboutSection && titleUnderline) {
+        underlineObserver.observe(aboutSection);
+      }
+
+      const aboutText = document.querySelector(".about__text");
+
+      if (aboutText) {
+        const words = aboutText.textContent
+          .split(/\s+/)
+          .filter((word) => word.length > 0);
+        aboutText.innerHTML = words
+          .map((word) => `<span>${word}</span>`)
+          .join(" ");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (
+                entry.isIntersecting &&
+                !aboutText.classList.contains("is-animated")
+              ) {
+                aboutText.classList.add("is-animated");
+
+                const spans = aboutText.querySelectorAll("span");
+                spans.forEach((span, i) => {
+                  span.style.transitionDelay = `${i * 0.08}s`;
+                });
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        observer.observe(aboutText);
+      }
     </script>
   </body>
 </html>
