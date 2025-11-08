@@ -510,10 +510,9 @@
       </div>
     </section>
 
-    <!-- <script src="nav-js.js" defer></script> -->
-    <!-- <script src="script.js" defer></script> -->
-    <script src="project.js" defer></script>
+
     <script src="contact.js" defer></script>
+    <script src="project.js"></script>
 
     <!-- secondary nav  + navigate button-->
     <script>
@@ -521,12 +520,17 @@
       const navMenu = document.querySelector(".nav-menu");
       const navCloseBtn = document.querySelector(".menu-close-btn");
       const mobNavLinks = document.querySelectorAll(".nav-menu .nav-link");
+      const exploreBtn = document.querySelector(".cta-explore");
 
       const closeNav = () => {
         navToggle.classList.remove("toggle");
         navMenu.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
       };
+
+      exploreBtn.addEventListener("click", () => {
+        closeNav();
+      })
 
       navToggle.addEventListener("click", () => {
         const isOpen = navMenu.classList.contains("open");
