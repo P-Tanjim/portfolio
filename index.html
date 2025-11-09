@@ -194,21 +194,21 @@
           </div>
 
           <div class="about__stats" role="list" aria-label="Key stats">
-            <div class="stat left" role="listitem">
+            <div class="stat scale" role="listitem">
               <div class="stat__num count" data-target="2" data-suffix="+">
                 0
               </div>
               <div class="stat__label">Years Experience</div>
             </div>
 
-            <div class="stat down" role="listitem">
+            <div class="stat scale" role="listitem">
               <div class="stat__num count" data-target="12" data-suffix="+">
                 0
               </div>
               <div class="stat__label">Projects</div>
             </div>
 
-            <div class="stat right" role="listitem">
+            <div class="stat scale" role="listitem">
               <div class="stat__num count" data-target="100" data-suffix="%">
                 0
               </div>
@@ -510,7 +510,6 @@
       </div>
     </section>
 
-
     <script src="contact.js" defer></script>
     <script src="project.js"></script>
 
@@ -530,7 +529,7 @@
 
       exploreBtn.addEventListener("click", () => {
         closeNav();
-      })
+      });
 
       navToggle.addEventListener("click", () => {
         const isOpen = navMenu.classList.contains("open");
@@ -740,30 +739,59 @@
         const words = aboutText.textContent
           .split(/\s+/)
           .filter((word) => word.length > 0);
+
         aboutText.innerHTML = words
-          .map((word) => `<span>${word}</span>`)
+          .map((word) => `<span aria-hidden="true">${word}</span>`)
           .join(" ");
 
-        const observer = new IntersectionObserver(
+        const spans = aboutText.querySelectorAll("span");
+
+        
+        spans.forEach((span) => {
+          span.style.opacity = "0";
+          span.style.transform = "scale(1)";
+          // set the transition properties here so it's consistent every time
+          span.style.transition = "opacity 0.45s ease, transform 0.45s ease";
+          // make sure there's no lingering transitionDelay
+          span.style.transitionDelay = "0s";
+          // keep white-space between words (prevent collapse)
+          span.style.display = "inline-block";
+          span.style.marginRight = "0.35ch";
+        });
+
+        // dedicated observer variable name to avoid collisions
+        const aboutTextObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (
-                entry.isIntersecting &&
-                !aboutText.classList.contains("is-animated")
-              ) {
-                aboutText.classList.add("is-animated");
-
-                const spans = aboutText.querySelectorAll("span");
+              if (entry.isIntersecting) {
+                // apply per-word delays and reveal them
                 spans.forEach((span, i) => {
-                  span.style.transitionDelay = `${i * 0.08}s`;
+                  // stagger delay
+                  span.style.transitionDelay = `${i * 0.06}s`;
+                });
+
+                // force reflow so the browser treats the style changes as a fresh transition
+                void aboutText.offsetWidth;
+
+                // reveal (final state)
+                spans.forEach((span) => {
+                  span.style.opacity = "1";
+                  span.style.transform = "none";
+                });
+              } else {
+                // reset them to hidden and clear delays so it can run again next time
+                spans.forEach((span) => {
+                  span.style.transitionDelay = "0s";
+                  span.style.opacity = "0";
+                  span.style.transform = "scale(0)";
                 });
               }
             });
           },
-          { threshold: 0.2 }
+          { threshold: 0.22 } 
         );
 
-        observer.observe(aboutText);
+        aboutTextObserver.observe(aboutText);
       }
     </script>
   </body>

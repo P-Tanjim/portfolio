@@ -1031,7 +1031,7 @@ nav button:hover {
   height: 3px;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
   width: 0;
-  transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
   border-radius: 15px;
 }
 
@@ -1053,6 +1053,19 @@ nav button:hover {
   animation: left both;
   animation-timeline: view();
   animation-range: entry 2% cover 30%;
+}
+.scale{
+  animation: scale both;
+  animation-timeline: view();
+  animation-range: entry 2% cover 20%;
+}
+@keyframes scale {
+  from{
+    scale: 0;
+  }
+  to{
+    scale: 1;
+  }
 }
 @keyframes right {
   from {

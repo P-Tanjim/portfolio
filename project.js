@@ -27,7 +27,7 @@ const observerOfCards = new IntersectionObserver((entries) => {
 
 
 if (widthOfScreen <= 767) {
-  sensitivity = 3;
+  sensitivity = 4;
   cards.forEach(card => observerOfCards.observe(card));
 } else {
   sensitivity = 7;
