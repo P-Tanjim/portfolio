@@ -15,20 +15,20 @@ let rotationId = null;
 let rotationActive = true;
 
 
-const observerOfCards = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.scale = "1.1";
-    } else {
-      entry.target.style.scale = "1";
-    }
-  });
-}, { threshold: 0.25 }); 
+// const observerOfCards = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.style.scale = "1.1";
+//     } else {
+//       entry.target.style.scale = "1";
+//     }
+//   });
+// }, { threshold: 0.25 }); 
 
 
 if (widthOfScreen <= 767) {
   sensitivity = 4;
-  cards.forEach(card => observerOfCards.observe(card));
+  // cards.forEach(card => observerOfCards.observe(card));
 } else {
   sensitivity = 7;
 }
