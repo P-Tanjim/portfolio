@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Working Lucid Glass / Liquid Lens</title>
+<style>
+  :root{
+    --lens-size: 180px;   /* change lens size here */
+    --magnify: 1.28;      /* magnification (1.0 = no zoom) */
+    --disp-scale: 20;     /* displacement intensity */
+  }
+
+  html,body{ height:100%; margin:0; background:#071026; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#fff; cursor:none; overflow:hidden; }
+
+  /* demo background gradient */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(800px 400px at 10% 20%, #16384f 0%, transparent 20%),
+      radial-gradient(700px 300px at 90% 85%, #0b2a3b 0%, transparent 18%),
+      linear-gradient(135deg, #071026 0%, #0b1220 100%);
+    z-index:0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index:1;
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    flex-direction:column;
+    padding:40px;
+  }
+
+  h1.main {
+    font-size:clamp(48px, 9vw, 96px);
+    letter-spacing:6px;
+    margin:0;
+    text-transform:uppercase;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+    z-index:2;
+  }
+
+  p.desc {
+    max-width:820px;
+    text-align:center;
+    color: rgba(255,255,255,0.84);
+    margin:18px 0 0 0;
+    font-size:16px;
+    z-index:2;
+  }
+
+  /* ---------- LENS (the droplet) ---------- */
+  .lens {
+    position: fixed;
+    left: calc(50% - var(--lens-size)/2);
+    top: calc(50% - var(--lens-size)/2);
+    width: var(--lens-size);
+    height: var(--lens-size);
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 55%, transparent 100%);
+    mask-image: radial-gradient(circle at 50% 50%, black 55%, transparent 100%);
+    box-shadow:
+      0 20px 50px rgba(2,6,15,0.55),
+      inset 0 2px 12px rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    will-change: transform, left, top;
+    transition: width .12s ease, height .12s ease;
+  }
+
+  /* inner glass highlight / rim */
+  .lens .glow {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(200% 120% at 20% 20%, rgba(255,255,255,0.22), rgba(255,255,255,0.06) 10%, transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.04) 60%);
+    mix-blend-mode:screen;
+    filter: blur(6px) saturate(120%);
+    z-index:6;
+  }
+
+  /* the duplicated content that is shown through the lens */
+  .lens .lens-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    will-change: transform;
+    /* IMPORTANT: apply SVG displacement here */
+    filter: url(#lensDisp);
+    -webkit-filter: url(#lensDisp);
+    z-index:3;
+  }
+
+  /* small rim highlight (bottom-right) */
+  .lens .rim {
+    position:absolute;
+    right: -6%;
+    bottom: 6%;
+    width:30%;
+    height:12%;
+    border-radius:50%;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.08), transparent 60%);
+    filter: blur(6px);
+    mix-blend-mode: screen;
+    z-index:7;
+    pointer-events:none;
+  }
+
+  /* inner subtle shadow */
+  .lens .inner-shadow {
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    box-shadow: inset 0 -14px 26px rgba(0,0,0,0.38), inset 0 6px 10px rgba(255,255,255,0.02);
+    z-index:5;
+    pointer-events:none;
+  }
+
+  /* scale when clicking */
+  .lens.is-down { transform: scale(.86); transition: transform .08s ease; }
+
+  /* responsive: reduce displacement on small screens */
+  @media (max-width:520px){
+    :root{ --disp-scale: 12; --lens-size: 140px; --magnify: 1.16; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="wrap">
+  <h1 class="main" id="origText">Lucid Glass</h1>
+  <p class="desc">Move the mouse — the droplet should magnify and refract the text beneath it like a real water lens. This version duplicates the content inside the lens, scales & offsets it, then applies an SVG displacement filter to simulate ripples/refraction.</p>
+</div>
+
+<!-- LENS: inside we place a duplicated copy of the heading (and other page elements if you want) -->
+<div class="lens" id="lens">
+  <div class="lens-inner" id="lensInner" aria-hidden="true">
+    <!-- duplicate content: match structure & styling so alignment works -->
+    <div style="padding:40px; display:flex; align-items:center; justify-content:center; flex-direction:column; min-height:100vh; box-sizing:border-box;">
+      <h1 class="main" style="margin:0; font-size:clamp(48px, 9vw, 96px); letter-spacing:6px; text-transform:uppercase;">Lucid Glass</h1>
+      <p style="display:none"><!-- Other content can be duplicated if needed --> </p>
+    </div>
+  </div>
+
+  <span class="glow"></span>
+  <span class="inner-shadow"></span>
+  <span class="rim"></span>
+</div>
+
+<!-- SVG filter used to displace (ripple) the duplicated content inside the lens -->
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="lensDisp" x="-50%" y="-50%" width="200%" height="200%">
+    <!-- turbulence to create ripples. baseFrequency controls ripple size -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="turb" stitchTiles="stitch"/>
+    <!-- blur the noise a touch for softer refraction -->
+    <feGaussianBlur in="turb" stdDeviation="0.6" result="blurNoise"/>
+    <!-- reduce brightness to keep displacement in range -->
+    <feColorMatrix in="blurNoise" type="saturate" values="0.1" result="mono"/>
+    <!-- displacement: use noise to displace the graphic-->
+    <feDisplacementMap in="SourceGraphic" in2="mono" scale="20" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<script>
+  (function(){
+    const lens = document.getElementById('lens');
+    const inner = document.getElementById('lensInner');
+    const orig = document.getElementById('origText');
+
+    let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+    let renderX = mouseX, renderY = mouseY;
+    const ease = 0.18; // smooth follow
+
+    // read root CSS values
+    const root = getComputedStyle(document.documentElement);
+    let LENS_SIZE = parseFloat(root.getPropertyValue('--lens-size')) || 180;
+    let MAG = parseFloat(root.getPropertyValue('--magnify')) || 1.28;
+    let DISP = parseFloat(root.getPropertyValue('--disp-scale')) || 20;
+
+    // reflect the disp value into the SVG displacement scale
+    function setDispScale(val){
+      // update the feDisplacementMap scale attribute
+      const disp = document.querySelector('filter feDisplacementMap');
+      if (disp) disp.setAttribute('scale', String(val));
+    }
+    setDispScale(DISP);
+
+    // copy font sizing/scale might be needed if you change layout dynamically
+    function syncInnerStyles(){
+      // If your page has more elements you can clone them dynamically.
+      // For this demo we only duplicated the heading above, so nothing more to sync.
+      LENS_SIZE = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lens-size')) || LENS_SIZE;
+      MAG = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--magnify')) || MAG;
+      setDispScale(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--disp-scale')) || DISP);
+    }
+    syncInnerStyles();
+
+    // mouse move handler
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      // center lens on pointer
+      lens.style.left = (mouseX - LENS_SIZE/2) + 'px';
+      lens.style.top  = (mouseY - LENS_SIZE/2) + 'px';
+
+      // compute inner content offset so the duplicated content lines up with the page under the lens
+      // because inner content is scaled (magnified), we shift it so it matches.
+      const scaled = MAG;
+      // position of inner content: offset so the point under cursor in page maps to center of lens
+      const innerLeft = - (mouseX * scaled) + (LENS_SIZE/2) + (window.innerWidth/2) - (window.innerWidth/2 * scaled);
+      const innerTop  = - (mouseY * scaled) + (LENS_SIZE/2) + (window.innerHeight/2) - (window.innerHeight/2 * scaled);
+
+      inner.style.transform = `translate(${innerLeft}px, ${innerTop}px) scale(${scaled})`;
+    }, {passive:true});
+
+    // smooth follow loop for subtle inertial motion (optional/visual polish)
+    function raf(){
+      renderX += (mouseX - renderX) * ease;
+      renderY += (mouseY - renderY) * ease;
+      // tiny tilt for liquid feeling (rotate based on horizontal velocity)
+      const vx = (mouseX - renderX);
+      lens.style.transform = `rotate(${vx*0.02}deg) translateZ(0)`;
+      requestAnimationFrame(raf);
+    }
+    raf();
+
+    // click feedback
+    window.addEventListener('mousedown', ()=> lens.classList.add('is-down'));
+    window.addEventListener('mouseup', ()=> lens.classList.remove('is-down'));
+
+    // resize handling: keep sync
+    window.addEventListener('resize', () => {
+      syncInnerStyles();
+      // reposition once so inner math stays correct
+      lens.style.left = (mouseX - LENS_SIZE/2) + 'px';
+      lens.style.top  = (mouseY - LENS_SIZE/2) + 'px';
+    });
+
+    // initial placement: center
+    lens.style.left = (mouseX - LENS_SIZE/2) + 'px';
+    lens.style.top  = (mouseY - LENS_SIZE/2) + 'px';
+    inner.style.transform = `translate(${ -mouseX * MAG + (window.innerWidth*(1-MAG)/2) }px, ${ -mouseY * MAG + (window.innerHeight*(1-MAG)/2) }px) scale(${MAG})`;
+
+    // helpful: expose a small API to tweak params from console (optional)
+    window.__lucid = {
+      setMagnify(v){ document.documentElement.style.setProperty('--magnify', v); syncInnerStyles(); },
+      setLensSize(v){ document.documentElement.style.setProperty('--lens-size', v + 'px'); syncInnerStyles(); },
+      setDisp(v){ document.documentElement.style.setProperty('--disp-scale', v); setDispScale(v); }
+    };
+  })();
+</script>
+</body>
+</html>

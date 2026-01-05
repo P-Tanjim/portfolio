@@ -1,102 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>TANJIM Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Urbanist:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="nav" role="navigation" aria-label="Main Navigation">
-      <div class="logo">
-        <svg
-          width="126.79"
-          height="30.507"
-          viewBox="0 0 126.79 30.507"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            id="svgGroup"
-            stroke-linecap="round"
-            fill-rule="evenodd"
-            font-size="9pt"
-            stroke="#000"
-            stroke-width="0.35mm"
-            fill="#00000000"
-            style="stroke: #000; stroke-width: 0.35mm; fill: #00000000"
-          >
-            <path
-              d="M 112.793 15.295 L 112.93 15.295 Q 113.169 14.373 113.451 13.475 Q 113.733 12.578 114.143 11.467 Q 114.502 10.476 115.015 9.186 Q 115.527 7.896 116.1 6.563 Q 116.672 5.229 117.219 4.084 Q 117.766 2.939 118.21 2.256 Q 118.757 1.418 119.398 1.008 Q 120.039 0.598 121.287 0.598 L 123.525 0.598 Q 124.414 0.598 125.021 0.863 Q 125.627 1.128 125.884 2.119 Q 126.072 2.854 126.243 4.272 Q 126.414 5.691 126.533 8.203 Q 126.653 10.715 126.721 14.655 Q 126.79 18.594 126.79 24.387 Q 126.79 24.695 126.584 24.9 Q 126.379 25.105 126.089 25.105 L 122.192 25.105 Q 121.902 25.105 121.697 24.9 Q 121.492 24.695 121.492 24.37 L 121.492 16.714 Q 121.492 13.569 121.475 11.501 Q 121.458 9.434 121.432 8.212 Q 121.406 6.99 121.355 6.323 L 121.252 6.323 Q 120.347 8.408 119.321 10.963 Q 118.296 13.518 117.322 16.227 Q 116.348 18.936 115.579 21.516 Q 115.356 22.285 115.023 22.584 Q 114.69 22.883 113.511 22.883 L 111.545 22.883 Q 110.537 22.883 110.204 22.627 Q 109.871 22.371 109.631 21.516 Q 109.067 19.568 108.384 17.397 Q 107.7 15.227 106.974 13.134 Q 106.248 11.04 105.573 9.271 Q 104.897 7.502 104.368 6.323 L 104.265 6.323 Q 104.128 8.34 104.026 11.228 Q 103.923 14.116 103.864 17.5 Q 103.804 20.884 103.787 24.404 Q 103.787 24.712 103.582 24.908 Q 103.376 25.105 103.086 25.105 L 99.583 25.105 Q 99.292 25.105 99.087 24.9 Q 98.882 24.695 98.882 24.37 Q 98.899 15.261 99.249 9.827 Q 99.6 4.392 100.01 2.546 Q 100.283 1.333 100.975 0.966 Q 101.667 0.598 102.556 0.598 L 105.325 0.598 Q 106.265 0.598 106.7 0.931 Q 107.136 1.265 107.769 2.222 Q 108.145 2.786 108.666 3.914 Q 109.187 5.042 109.751 6.417 Q 110.315 7.793 110.819 9.135 Q 111.323 10.476 111.648 11.467 Q 111.99 12.476 112.28 13.424 Q 112.571 14.373 112.793 15.295 Z M 53.577 7.4 L 53.577 24.199 Q 53.577 24.712 53.38 24.908 Q 53.184 25.105 52.688 25.105 L 49.253 25.105 Q 48.774 25.105 48.569 24.908 Q 48.364 24.712 48.364 24.199 L 48.364 2.546 Q 48.364 1.538 48.757 1.068 Q 49.15 0.598 50.142 0.598 L 51.731 0.598 Q 52.603 0.598 53.38 0.829 Q 54.158 1.06 55.038 1.863 Q 55.918 2.666 57.089 4.349 Q 58.259 6.033 59.917 8.938 Q 61.506 11.707 62.472 13.364 Q 63.438 15.022 63.967 15.894 Q 64.497 16.765 64.762 17.141 Q 65.027 17.517 65.198 17.756 L 65.198 3.333 Q 65.198 2.837 65.352 2.581 Q 66.086 1.453 67.385 0.205 Q 67.642 0 67.813 0 Q 68 0 68.223 0.205 Q 68.923 0.854 69.41 1.444 Q 69.897 2.034 70.256 2.581 Q 70.41 2.854 70.41 3.333 L 70.41 23.687 Q 70.41 24.456 70.12 24.78 Q 69.829 25.105 69.06 25.105 L 67.419 25.105 Q 66.685 25.105 65.916 24.857 Q 65.146 24.609 64.172 23.729 Q 63.198 22.849 61.865 20.986 Q 60.532 19.124 58.652 15.894 Q 57.063 13.142 56.115 11.519 Q 55.166 9.895 54.67 9.066 Q 54.175 8.237 53.953 7.904 Q 53.73 7.571 53.577 7.4 Z M 43.528 25.105 L 39.392 25.105 Q 38.589 25.105 38.555 24.302 Q 38.486 22.388 37.939 19.653 L 28.608 19.653 Q 28.13 22.319 28.062 24.302 Q 28.027 25.105 27.19 25.105 L 23.14 25.105 Q 22.832 25.105 22.627 24.926 Q 22.422 24.746 22.439 24.302 Q 22.524 22.405 22.994 19.987 Q 23.464 17.568 24.216 14.971 Q 24.968 12.373 25.891 9.886 Q 26.814 7.4 27.805 5.332 Q 28.796 3.264 29.736 1.948 Q 30.232 1.248 30.787 0.923 Q 31.343 0.598 32.163 0.598 L 34.624 0.598 Q 35.461 0.598 36.025 0.923 Q 36.589 1.248 37.085 1.948 Q 38.025 3.264 39.008 5.341 Q 39.99 7.417 40.913 9.895 Q 41.836 12.373 42.579 14.962 Q 43.323 17.551 43.801 19.944 Q 44.28 22.336 44.348 24.199 Q 44.365 25.105 43.528 25.105 Z M 13.33 5.093 L 13.33 24.199 Q 13.33 24.712 13.116 24.908 Q 12.903 25.105 12.39 25.105 L 8.75 25.105 Q 8.237 25.105 8.024 24.908 Q 7.81 24.712 7.81 24.199 L 7.81 5.093 L 2.717 5.093 Q 2.307 5.093 2.102 4.956 Q 1.658 4.648 1.188 4.221 Q 0.718 3.794 0.171 3.196 Q 0 2.974 0 2.837 Q 0 2.683 0.171 2.495 Q 0.718 1.897 1.188 1.47 Q 1.658 1.042 2.102 0.735 Q 2.341 0.598 2.717 0.598 L 18.44 0.598 Q 18.85 0.598 19.055 0.735 Q 19.5 1.042 19.978 1.47 Q 20.457 1.897 20.986 2.495 Q 21.157 2.717 21.157 2.854 Q 21.157 3.008 20.986 3.196 Q 20.457 3.794 19.978 4.221 Q 19.5 4.648 19.055 4.956 Q 18.816 5.093 18.44 5.093 L 13.33 5.093 Z M 82.595 3.333 L 82.595 17.961 Q 82.595 20.764 82.023 22.764 Q 81.45 24.763 80.45 26.165 Q 79.451 27.566 78.177 28.566 Q 76.904 29.565 75.503 30.386 Q 74.922 30.71 74.58 30.164 L 72.666 27.104 Q 72.29 26.489 72.922 26.113 Q 74.033 25.464 74.973 24.498 Q 75.913 23.533 76.494 21.969 Q 77.075 20.405 77.075 17.961 L 77.075 3.333 Q 77.075 2.837 77.246 2.581 Q 78.015 1.453 79.399 0.205 Q 79.656 0 79.844 0 Q 80.049 0 80.271 0.205 Q 81.023 0.854 81.536 1.444 Q 82.048 2.034 82.424 2.581 Q 82.595 2.854 82.595 3.333 Z M 93.584 3.333 L 93.584 24.199 Q 93.584 24.712 93.37 24.908 Q 93.157 25.105 92.644 25.105 L 89.004 25.105 Q 88.491 25.105 88.278 24.908 Q 88.064 24.712 88.064 24.199 L 88.064 3.333 Q 88.064 2.837 88.235 2.581 Q 89.004 1.453 90.388 0.205 Q 90.645 0 90.833 0 Q 91.038 0 91.26 0.205 Q 92.012 0.854 92.524 1.444 Q 93.037 2.034 93.413 2.581 Q 93.584 2.854 93.584 3.333 Z M 33.325 5.999 L 33.223 5.999 Q 32.095 7.793 31.155 10.288 Q 30.215 12.783 29.531 15.415 L 36.948 15.415 Q 36.23 12.783 35.291 10.288 Q 34.351 7.793 33.325 5.999 Z"
-              vector-effect="non-scaling-stroke"
-            />
-          </g>
-        </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>TANJIM Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Urbanist:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="nav" role="navigation" aria-label="Main Navigation">
+    <div class="logo">
+      <svg width="126.79" height="30.507" viewBox="0 0 126.79 30.507" xmlns="http://www.w3.org/2000/svg">
+        <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#000" stroke-width="0.35mm"
+          fill="#00000000" style="stroke: #000; stroke-width: 0.35mm; fill: #00000000">
+          <path
+            d="M 112.793 15.295 L 112.93 15.295 Q 113.169 14.373 113.451 13.475 Q 113.733 12.578 114.143 11.467 Q 114.502 10.476 115.015 9.186 Q 115.527 7.896 116.1 6.563 Q 116.672 5.229 117.219 4.084 Q 117.766 2.939 118.21 2.256 Q 118.757 1.418 119.398 1.008 Q 120.039 0.598 121.287 0.598 L 123.525 0.598 Q 124.414 0.598 125.021 0.863 Q 125.627 1.128 125.884 2.119 Q 126.072 2.854 126.243 4.272 Q 126.414 5.691 126.533 8.203 Q 126.653 10.715 126.721 14.655 Q 126.79 18.594 126.79 24.387 Q 126.79 24.695 126.584 24.9 Q 126.379 25.105 126.089 25.105 L 122.192 25.105 Q 121.902 25.105 121.697 24.9 Q 121.492 24.695 121.492 24.37 L 121.492 16.714 Q 121.492 13.569 121.475 11.501 Q 121.458 9.434 121.432 8.212 Q 121.406 6.99 121.355 6.323 L 121.252 6.323 Q 120.347 8.408 119.321 10.963 Q 118.296 13.518 117.322 16.227 Q 116.348 18.936 115.579 21.516 Q 115.356 22.285 115.023 22.584 Q 114.69 22.883 113.511 22.883 L 111.545 22.883 Q 110.537 22.883 110.204 22.627 Q 109.871 22.371 109.631 21.516 Q 109.067 19.568 108.384 17.397 Q 107.7 15.227 106.974 13.134 Q 106.248 11.04 105.573 9.271 Q 104.897 7.502 104.368 6.323 L 104.265 6.323 Q 104.128 8.34 104.026 11.228 Q 103.923 14.116 103.864 17.5 Q 103.804 20.884 103.787 24.404 Q 103.787 24.712 103.582 24.908 Q 103.376 25.105 103.086 25.105 L 99.583 25.105 Q 99.292 25.105 99.087 24.9 Q 98.882 24.695 98.882 24.37 Q 98.899 15.261 99.249 9.827 Q 99.6 4.392 100.01 2.546 Q 100.283 1.333 100.975 0.966 Q 101.667 0.598 102.556 0.598 L 105.325 0.598 Q 106.265 0.598 106.7 0.931 Q 107.136 1.265 107.769 2.222 Q 108.145 2.786 108.666 3.914 Q 109.187 5.042 109.751 6.417 Q 110.315 7.793 110.819 9.135 Q 111.323 10.476 111.648 11.467 Q 111.99 12.476 112.28 13.424 Q 112.571 14.373 112.793 15.295 Z M 53.577 7.4 L 53.577 24.199 Q 53.577 24.712 53.38 24.908 Q 53.184 25.105 52.688 25.105 L 49.253 25.105 Q 48.774 25.105 48.569 24.908 Q 48.364 24.712 48.364 24.199 L 48.364 2.546 Q 48.364 1.538 48.757 1.068 Q 49.15 0.598 50.142 0.598 L 51.731 0.598 Q 52.603 0.598 53.38 0.829 Q 54.158 1.06 55.038 1.863 Q 55.918 2.666 57.089 4.349 Q 58.259 6.033 59.917 8.938 Q 61.506 11.707 62.472 13.364 Q 63.438 15.022 63.967 15.894 Q 64.497 16.765 64.762 17.141 Q 65.027 17.517 65.198 17.756 L 65.198 3.333 Q 65.198 2.837 65.352 2.581 Q 66.086 1.453 67.385 0.205 Q 67.642 0 67.813 0 Q 68 0 68.223 0.205 Q 68.923 0.854 69.41 1.444 Q 69.897 2.034 70.256 2.581 Q 70.41 2.854 70.41 3.333 L 70.41 23.687 Q 70.41 24.456 70.12 24.78 Q 69.829 25.105 69.06 25.105 L 67.419 25.105 Q 66.685 25.105 65.916 24.857 Q 65.146 24.609 64.172 23.729 Q 63.198 22.849 61.865 20.986 Q 60.532 19.124 58.652 15.894 Q 57.063 13.142 56.115 11.519 Q 55.166 9.895 54.67 9.066 Q 54.175 8.237 53.953 7.904 Q 53.73 7.571 53.577 7.4 Z M 43.528 25.105 L 39.392 25.105 Q 38.589 25.105 38.555 24.302 Q 38.486 22.388 37.939 19.653 L 28.608 19.653 Q 28.13 22.319 28.062 24.302 Q 28.027 25.105 27.19 25.105 L 23.14 25.105 Q 22.832 25.105 22.627 24.926 Q 22.422 24.746 22.439 24.302 Q 22.524 22.405 22.994 19.987 Q 23.464 17.568 24.216 14.971 Q 24.968 12.373 25.891 9.886 Q 26.814 7.4 27.805 5.332 Q 28.796 3.264 29.736 1.948 Q 30.232 1.248 30.787 0.923 Q 31.343 0.598 32.163 0.598 L 34.624 0.598 Q 35.461 0.598 36.025 0.923 Q 36.589 1.248 37.085 1.948 Q 38.025 3.264 39.008 5.341 Q 39.99 7.417 40.913 9.895 Q 41.836 12.373 42.579 14.962 Q 43.323 17.551 43.801 19.944 Q 44.28 22.336 44.348 24.199 Q 44.365 25.105 43.528 25.105 Z M 13.33 5.093 L 13.33 24.199 Q 13.33 24.712 13.116 24.908 Q 12.903 25.105 12.39 25.105 L 8.75 25.105 Q 8.237 25.105 8.024 24.908 Q 7.81 24.712 7.81 24.199 L 7.81 5.093 L 2.717 5.093 Q 2.307 5.093 2.102 4.956 Q 1.658 4.648 1.188 4.221 Q 0.718 3.794 0.171 3.196 Q 0 2.974 0 2.837 Q 0 2.683 0.171 2.495 Q 0.718 1.897 1.188 1.47 Q 1.658 1.042 2.102 0.735 Q 2.341 0.598 2.717 0.598 L 18.44 0.598 Q 18.85 0.598 19.055 0.735 Q 19.5 1.042 19.978 1.47 Q 20.457 1.897 20.986 2.495 Q 21.157 2.717 21.157 2.854 Q 21.157 3.008 20.986 3.196 Q 20.457 3.794 19.978 4.221 Q 19.5 4.648 19.055 4.956 Q 18.816 5.093 18.44 5.093 L 13.33 5.093 Z M 82.595 3.333 L 82.595 17.961 Q 82.595 20.764 82.023 22.764 Q 81.45 24.763 80.45 26.165 Q 79.451 27.566 78.177 28.566 Q 76.904 29.565 75.503 30.386 Q 74.922 30.71 74.58 30.164 L 72.666 27.104 Q 72.29 26.489 72.922 26.113 Q 74.033 25.464 74.973 24.498 Q 75.913 23.533 76.494 21.969 Q 77.075 20.405 77.075 17.961 L 77.075 3.333 Q 77.075 2.837 77.246 2.581 Q 78.015 1.453 79.399 0.205 Q 79.656 0 79.844 0 Q 80.049 0 80.271 0.205 Q 81.023 0.854 81.536 1.444 Q 82.048 2.034 82.424 2.581 Q 82.595 2.854 82.595 3.333 Z M 93.584 3.333 L 93.584 24.199 Q 93.584 24.712 93.37 24.908 Q 93.157 25.105 92.644 25.105 L 89.004 25.105 Q 88.491 25.105 88.278 24.908 Q 88.064 24.712 88.064 24.199 L 88.064 3.333 Q 88.064 2.837 88.235 2.581 Q 89.004 1.453 90.388 0.205 Q 90.645 0 90.833 0 Q 91.038 0 91.26 0.205 Q 92.012 0.854 92.524 1.444 Q 93.037 2.034 93.413 2.581 Q 93.584 2.854 93.584 3.333 Z M 33.325 5.999 L 33.223 5.999 Q 32.095 7.793 31.155 10.288 Q 30.215 12.783 29.531 15.415 L 36.948 15.415 Q 36.23 12.783 35.291 10.288 Q 34.351 7.793 33.325 5.999 Z"
+            vector-effect="non-scaling-stroke" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="pages" id="pages" role="menubar">
+      <a href="#Home" class="nav-link" role="menuitem">Home</a>
+      <a href="#about" class="nav-link" role="menuitem">About Me</a>
+      <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+      <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+      <!-- lucid glass effect logic -->
+
+      <!-- <div class="nav-pointer"></div> -->
+    </div>
+
+    <button class="nav-cta">Hire</button>
+
+    <div class="burger" id="burger" role="button" aria-expanded="false" aria-controls="navPages">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="nav-menu" id="navPages" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+    <div class="menu-card">
+      <div class="menu-header">
+        <button class="menu-close-btn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
 
-      <div class="pages" id="pages" role="menubar">
+      <div class="menu-links-container" role="menu">
         <a href="#Home" class="nav-link" role="menuitem">Home</a>
         <a href="#about" class="nav-link" role="menuitem">About Me</a>
         <a href="#projects" class="nav-link" role="menuitem">Projects</a>
         <a href="#contact" class="nav-link" role="menuitem">Contact</a>
-        <span class="nav-underline" aria-hidden="true"></span>
       </div>
 
-      <button class="nav-cta">Hire</button>
-
-      <div
-        class="burger"
-        id="burger"
-        role="button"
-        aria-expanded="false"
-        aria-controls="navPages"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-
-    <div
-      class="nav-menu"
-      id="navPages"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="menu-title"
-    >
-      <div class="menu-card">
-        <div class="menu-header">
-          <button class="menu-close-btn" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <div class="menu-links-container" role="menu">
-          <a href="#Home" class="nav-link" role="menuitem">Home</a>
-          <a href="#about" class="nav-link" role="menuitem">About Me</a>
-          <a href="#projects" class="nav-link" role="menuitem">Projects</a>
-          <a href="#contact" class="nav-link" role="menuitem">Contact</a>
-        </div>
-
-        <div class="menu-content-block">
-          <button class="cta-explore">Explore</button>
-        </div>
+      <div class="menu-content-block">
+        <button class="cta-explore">Explore</button>
       </div>
     </div>
+  </div>
 
-    <!-- content -->
+  <!-- main content -->
+  <main>
     <section id="Home" class="hero">
       <div class="hero__glow glow--left"></div>
       <div class="hero__glow glow--center"></div>
@@ -126,46 +100,26 @@
         </p>
         <div class="links">
           <div class="social">
-            <a
-              class="social-link"
-              href="https://facebook.com/moksedur.rahman.tanjim"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
-            >
+            <a class="social-link" href="https://facebook.com/moksedur.rahman.tanjim" target="_blank" rel="noopener"
+              aria-label="Facebook">
               <i class="fab fa-facebook-f"></i>
               <span class="social-label">Facebook</span>
             </a>
 
-            <a
-              class="social-link"
-              href="https://github.com/P-tanjim"
-              target="_blank"
-              rel="noopener"
-              aria-label="GitHub"
-            >
+            <a class="social-link" href="https://github.com/P-tanjim" target="_blank" rel="noopener"
+              aria-label="GitHub">
               <i class="fab fa-github"></i>
               <span class="social-label">GitHub</span>
             </a>
 
-            <a
-              class="social-link"
-              href="https://youtube.com/@wbDev-23"
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
+            <a class="social-link" href="https://youtube.com/@wbDev-23" target="_blank" rel="noopener"
+              aria-label="YouTube">
               <i class="fab fa-youtube"></i>
               <span class="social-label">YouTube</span>
             </a>
 
-            <a
-              class="social-link"
-              href="https://linkedin.com/in/moksedur-rahman-tanjim-962387388/"
-              target="_blank"
-              rel="noopener"
-              aria-label="LinkedIn"
-            >
+            <a class="social-link" href="https://linkedin.com/in/moksedur-rahman-tanjim-962387388/" target="_blank"
+              rel="noopener" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
               <span class="social-label">LinkedIn</span>
             </a>
@@ -186,11 +140,7 @@
       <div class="about__wrap">
         <aside class="about__side" aria-hidden="false">
           <div class="about__avatar-wrap">
-            <img
-              src="profile.webp"
-              alt="Tanjim portrait"
-              class="about__avatar"
-            />
+            <img src="images/profile.webp" alt="Tanjim portrait" class="about__avatar" />
           </div>
 
           <div class="about__stats" role="list" aria-label="Key stats">
@@ -263,7 +213,7 @@
       <div class="title">Projects</div>
 
       <div class="slider" style="--quantity: 6">
-        <div class="card iteam" id="card" style="--position: 1">
+        <article class="card item" id="card" style="--position: 1">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -271,7 +221,7 @@
                 <h2>Apanique</h2>
               </div>
               <div class="project-image">
-                <img src="project1.webp" alt="Apanique preview" />
+                <img src="images/project1.webp" alt="Apanique preview" />
               </div>
               <p>
                 Responsive ecommerce demo: product grid, cart UI, and checkout
@@ -290,18 +240,12 @@
                   responsive layout optimized for mobile and desktop.
                 </p>
               </div>
-              <a
-                href="https://p-tanjim.github.io/apanique"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://p-tanjim.github.io/apanique" id="link" target="_blank" rel="noopener">Open →</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card iteam" id="card" style="--position: 2">
+        <article class="card item" id="card" style="--position: 2">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -309,7 +253,7 @@
                 <h2>Blood Management</h2>
               </div>
               <div class="project-image">
-                <img src="project2.webp" alt="Blood Management preview" />
+                <img src="images/project2.webp" alt="Blood Management preview" />
               </div>
               <p>Donor management and search system with admin controls.</p>
             </div>
@@ -326,18 +270,12 @@
                   deployments.
                 </p>
               </div>
-              <a
-                href="https://github.com/P-Tanjim/Blood-donation"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://github.com/P-Tanjim/Blood-donation" id="link" target="_blank" rel="noopener">Open →</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card iteam" id="card" style="--position: 3">
+        <article class="card item" id="card" style="--position: 3">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -345,7 +283,7 @@
                 <h2>Fight Web Game</h2>
               </div>
               <div class="project-image">
-                <img src="project3.webp" alt="Web game preview" />
+                <img src="images/project3.webp" alt="Web game preview" />
               </div>
               <p>HTML5/JS mini game with touch and keyboard controls.</p>
             </div>
@@ -361,18 +299,12 @@
                   animations for fun UX.
                 </p>
               </div>
-              <a
-                href="https://p-tanjim.github.io/hasinaVSyunus"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://p-tanjim.github.io/hasinaVSyunus" id="link" target="_blank" rel="noopener">Open →</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card iteam" id="card" style="--position: 4">
+        <article class="card item" id="card" style="--position: 4">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -380,7 +312,7 @@
                 <h2>Text to ASCII</h2>
               </div>
               <div class="project-image">
-                <img src="project4.webp" alt="Text to ASCII preview" />
+                <img src="images/project4.webp" alt="Text to ASCII preview" />
               </div>
               <p>Python tool to convert plain text into stylized ASCII art.</p>
             </div>
@@ -396,18 +328,13 @@
                   options for output formatting.
                 </p>
               </div>
-              <a
-                href="https://github.com/P-Tanjim/Text-to-ASCII-art"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://github.com/P-Tanjim/Text-to-ASCII-art" id="link" target="_blank" rel="noopener">Open
+                →</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card iteam" id="card" style="--position: 5">
+        <article class="card item" id="card" style="--position: 5">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -415,7 +342,7 @@
                 <h2>BioLearn Animated Lessons</h2>
               </div>
               <div class="project-image">
-                <img src="project5.webp" alt="BioLearn preview" />
+                <img src="images/project5.webp" alt="BioLearn preview" />
               </div>
               <p>
                 Interactive biology lessons with animated diagrams and quizzes.
@@ -433,18 +360,12 @@
                   students.
                 </p>
               </div>
-              <a
-                href="https://p-tanjim.github.io/sanjir-sir"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://p-tanjim.github.io/sanjir-sir" id="link" target="_blank" rel="noopener">Open →</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card iteam" id="card" style="--position: 6">
+        <article class="card item" id="card" style="--position: 6">
           <div class="wrap" role="group" aria-hidden="false">
             <div class="face front">
               <div>
@@ -452,7 +373,7 @@
                 <h2>My Portfolio</h2>
               </div>
               <div class="project-image">
-                <img src="project6.webp" alt="Portfolio preview" />
+                <img src="images/project6.webp" alt="Portfolio preview" />
               </div>
               <p>
                 Personal portfolio showcasing projects, skills, and contact
@@ -471,16 +392,10 @@
                   visuals.
                 </p>
               </div>
-              <a
-                href="https://p-tanjim.github.io/portfolio"
-                id="link"
-                target="_blank"
-                rel="noopener"
-                >Open →</a
-              >
+              <a href="https://p-tanjim.github.io/portfolio" id="link" target="_blank" rel="noopener">Open →</a>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -509,290 +424,303 @@
         <canvas id="networkCanvas"></canvas>
       </div>
     </section>
+  </main>
 
-    <script src="contact.js" defer></script>
-    <script src="project.js"></script>
+  <script src="js file/contact.js" defer></script>
+  <script src="js file/project.js" defer></script>
 
-    <!-- secondary nav  + navigate button-->
-    <script>
-      const navToggle = document.querySelector(".burger");
-      const navMenu = document.querySelector(".nav-menu");
-      const navCloseBtn = document.querySelector(".menu-close-btn");
-      const mobNavLinks = document.querySelectorAll(".nav-menu .nav-link");
-      const exploreBtn = document.querySelector(".cta-explore");
+  <!-- cursor js -->
+  <script src="js file/cursor.js"></script>
+  <!-- secondary nav  + navigate button-->
+  <script defer>
+    const navToggle = document.querySelector(".burger");
+    const navMenu = document.querySelector(".nav-menu");
+    const navCloseBtn = document.querySelector(".menu-close-btn");
+    const mobNavLinks = document.querySelectorAll(".nav-menu .nav-link");
+    const exploreBtn = document.querySelector(".cta-explore");
 
-      const closeNav = () => {
-        navToggle.classList.remove("toggle");
-        navMenu.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      };
+    const closeNav = () => {
+      navToggle.classList.remove("toggle");
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
 
-      exploreBtn.addEventListener("click", () => {
+    exploreBtn.addEventListener("click", () => {
+      closeNav();
+    });
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.contains("open");
+
+      if (isOpen) {
         closeNav();
-      });
+      } else {
+        navToggle.classList.add("toggle");
+        navMenu.classList.add("open");
+        navToggle.setAttribute("aria-expanded", "true");
+      }
+    });
 
-      navToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.contains("open");
+    if (navCloseBtn) {
+      navCloseBtn.addEventListener("click", closeNav);
+    }
 
-        if (isOpen) {
-          closeNav();
-        } else {
-          navToggle.classList.add("toggle");
-          navMenu.classList.add("open");
-          navToggle.setAttribute("aria-expanded", "true");
+    navMenu.addEventListener("click", (ev) => {
+      if (ev.target === navMenu) closeNav();
+    });
+
+    window.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && navMenu.classList.contains("open")) {
+        closeNav();
+      }
+    });
+
+    mobNavLinks.forEach((link) => {
+      link.addEventListener("click", closeNav);
+    });
+
+    let sections = document.querySelectorAll("section");
+    let navLinks = document.querySelectorAll("nav .pages a");
+    let navLinksMob = document.querySelectorAll(
+      ".nav-menu .menu-links-container a"
+    );
+
+    window.onscroll = () => {
+      sections.forEach((sec) => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+
+        if (top >= offset && top < offset + height) {
+          navLinks.forEach((links) => {
+            links.classList.remove("active");
+            document.querySelector("nav .pages a[href*=" + id + "]");
+          });
+
+          navLinksMob.forEach((links) => {
+            links.classList.remove("is-active");
+            document
+              .querySelector(
+                ".nav-menu .menu-links-container a[href*=" + id + "]"
+              )
+              .classList.add("is-active");
+          });
         }
       });
+    };
 
-      if (navCloseBtn) {
-        navCloseBtn.addEventListener("click", closeNav);
-      }
+    const ctaButton = document.querySelector(".cta");
+    const contactBtn = document.querySelector(".cta2");
+    const btnAboutOne = document.querySelector(".btn--primary");
+    const btnAboutTwo = document.querySelector(".btn--ghost");
+    const gotoAbout = document.querySelector(".up-icon");
+    const gotoContact = document.querySelector(".down-icon");
 
-      mobNavLinks.forEach((link) => {
-        link.addEventListener("click", closeNav);
-      });
+    function scrollProject() {
+      const targetId = "#projects";
+      const targetSection = document.querySelector(targetId);
 
-      let sections = document.querySelectorAll("section");
-      let navLinks = document.querySelectorAll("nav .pages a");
-      let navLinksMob = document.querySelectorAll(
-        ".nav-menu .menu-links-container a"
-      );
-
-      window.onscroll = () => {
-        sections.forEach((sec) => {
-          let top = window.scrollY;
-          let offset = sec.offsetTop;
-          let height = sec.offsetHeight;
-          let id = sec.getAttribute("id");
-
-          if (top >= offset && top < offset + height) {
-            navLinks.forEach((links) => {
-              links.classList.remove("active");
-              document.querySelector("nav .pages a[href*=" + id + "]");
-            });
-
-            navLinksMob.forEach((links) => {
-              links.classList.remove("is-active");
-              document
-                .querySelector(
-                  ".nav-menu .menu-links-container a[href*=" + id + "]"
-                )
-                .classList.add("is-active");
-            });
-          }
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
         });
+      }
+    }
+
+    function scrollContact() {
+      const targetId = "#contact";
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+
+    if (gotoAbout) {
+      gotoAbout.addEventListener("click", () => {
+        const targetId = "#about";
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+
+    if (gotoContact) {
+      gotoContact.addEventListener("click", () => {
+        scrollContact();
+      });
+    }
+
+    if (contactBtn) {
+      contactBtn.addEventListener("click", () => {
+        scrollContact();
+      });
+    }
+
+    if (ctaButton) {
+      ctaButton.addEventListener("click", () => {
+        scrollProject();
+      });
+    }
+
+    if (btnAboutTwo) {
+      btnAboutTwo.addEventListener("click", () => {
+        scrollContact();
+      });
+    }
+
+    if (btnAboutOne) {
+      btnAboutOne.addEventListener("click", () => {
+        scrollProject();
+      });
+    }
+  </script>
+
+  <!-- little animations by js -->
+  <script defer>
+    const countUp = (el) => {
+      const target = parseInt(el.getAttribute("data-target"));
+      const suffix = el.getAttribute("data-suffix") || "";
+      const duration = 2000;
+      let startTimestamp = null;
+
+      el.textContent = "0" + suffix;
+
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(progress * target);
+
+        el.textContent = currentValue + suffix;
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
       };
 
-      const ctaButton = document.querySelector(".cta");
-      const contactBtn = document.querySelector(".cta2");
-      const btnAboutOne = document.querySelector(".btn--primary");
-      const btnAboutTwo = document.querySelector(".btn--ghost");
-      const gotoAbout = document.querySelector(".up-icon");
-      const gotoContact = document.querySelector(".down-icon");
+      window.requestAnimationFrame(step);
+    };
 
-      function scrollProject() {
-        const targetId = "#projects";
-        const targetSection = document.querySelector(targetId);
+    const counters = document.querySelectorAll(".count");
 
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      }
-
-      function scrollContact() {
-        const targetId = "#contact";
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      }
-
-      if (gotoAbout) {
-        gotoAbout.addEventListener("click", () => {
-          const targetId = "#about";
-          const targetSection = document.querySelector(targetId);
-
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-        });
-      }
-
-      if (gotoContact) {
-        gotoContact.addEventListener("click", () => {
-          scrollContact();
-        });
-      }
-
-      if (contactBtn) {
-        contactBtn.addEventListener("click", () => {
-          scrollContact();
-        });
-      }
-
-      if (ctaButton) {
-        ctaButton.addEventListener("click", () => {
-          scrollProject();
-        });
-      }
-
-      if (btnAboutTwo) {
-        btnAboutTwo.addEventListener("click", () => {
-          scrollContact();
-        });
-      }
-
-      if (btnAboutOne) {
-        btnAboutOne.addEventListener("click", () => {
-          scrollProject();
-        });
-      }
-    </script>
-
-    <!-- little animations by js -->
-    <script>
-      const countUp = (el) => {
-        const target = parseInt(el.getAttribute("data-target"));
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
         const suffix = el.getAttribute("data-suffix") || "";
-        const duration = 2000;
-        let startTimestamp = null;
 
-        el.textContent = "0" + suffix;
+        if (entry.isIntersecting) {
+          countUp(el);
+        } else {
+          el.textContent = "0" + suffix;
+        }
+      });
+    };
 
-        const step = (timestamp) => {
-          if (!startTimestamp) startTimestamp = timestamp;
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    });
 
-          const elapsed = timestamp - startTimestamp;
-          const progress = Math.min(elapsed / duration, 1);
-          const currentValue = Math.floor(progress * target);
+    counters.forEach((counter) => {
+      observer.observe(counter);
+    });
 
-          el.textContent = currentValue + suffix;
+    const aboutSection = document.getElementById("about");
+    const titleUnderline = document.getElementById("about-underline");
 
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          }
-        };
+    const underlineObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          titleUnderline.classList.add("is-visible");
+        } else {
+          titleUnderline.classList.remove("is-visible");
+        }
+      });
+    };
 
-        window.requestAnimationFrame(step);
-      };
-
-      const counters = document.querySelectorAll(".count");
-
-      const observerCallback = (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target;
-          const suffix = el.getAttribute("data-suffix") || "";
-
-          if (entry.isIntersecting) {
-            countUp(el);
-          } else {
-            el.textContent = "0" + suffix;
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(observerCallback, {
+    const underlineObserver = new IntersectionObserver(
+      underlineObserverCallback,
+      {
         root: null,
         rootMargin: "0px",
-        threshold: 0,
-      });
+        threshold: 0.1,
+      }
+    );
 
-      counters.forEach((counter) => {
-        observer.observe(counter);
-      });
+    if (aboutSection && titleUnderline) {
+      underlineObserver.observe(aboutSection);
+    }
 
-      const aboutSection = document.getElementById("about");
-      const titleUnderline = document.getElementById("about-underline");
+    const aboutText = document.querySelector(".about__text");
 
-      const underlineObserverCallback = (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            titleUnderline.classList.add("is-visible");
-          } else {
-            titleUnderline.classList.remove("is-visible");
-          }
+    if (aboutText) {
+      const words = aboutText.textContent
+        .split(/\s+/)
+        .filter((word) => word.length > 0);
+
+      aboutText.innerHTML = words
+        .map((word) => `<span aria-hidden="true">${word}</span>`)
+        .join(" ");
+
+      const spans = aboutText.querySelectorAll("span");
+
+      spans.forEach((span) => {
+        span.addEventListener("mouseover", () => {
+          span.style.textDecoration = "underline";
         });
-      };
+        span.addEventListener("mouseleave", () => {
+          span.style.textDecoration = "none";
+        });
+      });
 
-      const underlineObserver = new IntersectionObserver(
-        underlineObserverCallback,
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.1,
-        }
+      spans.forEach((span) => {
+        span.style.opacity = "0";
+        span.style.transform = "scale(1)";
+        span.style.transition = "opacity 0.45s ease, transform 0.45s ease";
+        span.style.transitionDelay = "0s";
+        span.style.display = "inline-block";
+        span.style.marginRight = "0.35ch";
+      });
+
+      const aboutTextObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              spans.forEach((span, i) => {
+                span.style.transitionDelay = `${i * 0.06}s`;
+              });
+
+              void aboutText.offsetWidth;
+
+              spans.forEach((span) => {
+                span.style.opacity = "1";
+                span.style.transform = "none";
+              });
+            } else {
+              spans.forEach((span) => {
+                span.style.transitionDelay = "0s";
+                span.style.opacity = "0";
+                span.style.transform = "scale(0)";
+              });
+            }
+          });
+        },
+        { threshold: 0.22 }
       );
 
-      if (aboutSection && titleUnderline) {
-        underlineObserver.observe(aboutSection);
-      }
+      aboutTextObserver.observe(aboutText);
+    }
+  </script>
+</body>
 
-      const aboutText = document.querySelector(".about__text");
-
-      if (aboutText) {
-        const words = aboutText.textContent
-          .split(/\s+/)
-          .filter((word) => word.length > 0);
-
-        aboutText.innerHTML = words
-          .map((word) => `<span aria-hidden="true">${word}</span>`)
-          .join(" ");
-
-        const spans = aboutText.querySelectorAll("span");
-
-        spans.forEach((span) =>{
-          span.addEventListener("mouseover", () => {
-            span.style.textDecoration = "underline";
-          })
-          span.addEventListener("mouseleave", () => {
-            span.style.textDecoration = "none";
-          })
-        })
-
-        
-        spans.forEach((span) => {
-          span.style.opacity = "0";
-          span.style.transform = "scale(1)";
-          span.style.transition = "opacity 0.45s ease, transform 0.45s ease";
-          span.style.transitionDelay = "0s";
-          span.style.display = "inline-block";
-          span.style.marginRight = "0.35ch";
-        });
-
-        const aboutTextObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                spans.forEach((span, i) => {
-                  span.style.transitionDelay = `${i * 0.06}s`;
-                });
-
-                void aboutText.offsetWidth;
-
-                spans.forEach((span) => {
-                  span.style.opacity = "1";
-                  span.style.transform = "none";
-                });
-              } else {
-                spans.forEach((span) => {
-                  span.style.transitionDelay = "0s";
-                  span.style.opacity = "0";
-                  span.style.transform = "scale(0)";
-                });
-              }
-            });
-          },
-          { threshold: 0.22 } 
-        );
-
-        aboutTextObserver.observe(aboutText);
-      }
-    </script>
-  </body>
 </html>

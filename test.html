@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Liquid Glass demo</title>
+<style>
+  /* page background (replace with your wallpaper) */
+  body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s='); /* demo */
+    background-size: cover;
+    background-position: center;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* glass card */
+  .glass {
+    width: 360px;
+    padding: 28px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    /* translucent tint + blur (glassmorphism core) */
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px) saturate(1.2);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  }
+
+  /* pseudo-layer that receives the SVG displacement (liquid distortion) */
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* color tint to strengthen the look */
+    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+    /* apply the SVG filter by id */
+    filter: url(#liquid-filter);
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+
+  /* content sits above distortion */
+  .glass > .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 { margin: 0 0 6px; font-size: 20px; }
+  p { margin: 0; opacity: 0.9; }
+
+  /* optional subtle chromatic aberration underlay */
+  .chromatic {
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(circle at 20% 20%, rgba(255,120,150,0.06), transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(120,200,255,0.05), transparent 25%);
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translateZ(0);
+  }
+</style>
+</head>
+<body>
+  <!-- SVG filter (copy this block into your page) -->
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="liquid-filter">
+      <!-- noise generator -->
+      <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <!-- slight blur to smooth the noise -->
+      <feGaussianBlur in="noise" stdDeviation="0.4" result="noiseBlur"/>
+      <!-- displacement map: scale controls strength -->
+      <feDisplacementMap in="SourceGraphic" in2="noiseBlur" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+      <!-- optional color/brightness tweaks -->
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="1.02"/>
+        <feFuncG type="linear" slope="1.02"/>
+        <feFuncB type="linear" slope="1.02"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <div class="glass">
+    <div class="chromatic"></div>
+    <div class="content">
+      <h1>Liquid Glass</h1>
+      <p>Apple-style frosted &amp; liquid distortion demo — tweak baseFrequency &amp; scale to change morph.</p>
+    </div>
+  </div>
+
+<script>
+  // tiny animation loop that changes turbulence baseFrequency for gentle morphing
+  (function animateTurbulence() {
+    const turb = document.getElementById('turb');
+    let t = 0;
+    function step() {
+      t += 0.01;
+      // baseFrequency oscillates for slow motion; tweak amplitude/speed to taste
+      const bf = 0.6 + Math.sin(t) * 0.25; 
+      turb.setAttribute('baseFrequency', bf.toFixed(3));
+      requestAnimationFrame(step);
+    }
+    step();
+  })();
+</script>
+</body>
+</html>
